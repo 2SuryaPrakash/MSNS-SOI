@@ -1,0 +1,148 @@
+
+.landing-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation: enter-right 1000ms 1ms ease-out both;
+    
+
+}
+
+
+/*@keyframes enter-left{
+    from{
+        transform: translateX(-50%);
+    }
+
+    50%{
+        scale:0.5;
+    }
+    to{
+        scale:1;
+        transform: none;
+    }
+}*/
+
+@keyframes enter-right {
+    from {
+        transform: translateY(-20%) ;
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+        scale:1.0;
+        transform: none;
+         
+    }
+}
+
+@keyframes appear-left {
+    from{
+        opacity: 1;
+        scale:1;
+    }  
+    10%{
+        scale:0.5;
+    } 
+
+    50%{
+        opacity: 0;
+        scale: 0;
+        transform: translateX(-100%)  rotate(5deg);
+    }
+    to{
+        opacity: 1;
+        scale:1;
+    }
+}
+
+@keyframes appear-right {
+    from{
+        opacity: 1;
+        scale:1;
+    }   
+
+    18%{
+        scale:0.5;
+    }
+
+    50%{
+        opacity: 0;
+        scale: 0;
+        transform: translateX(100%) rotate(-5deg);
+
+    }
+    to{
+        opacity: 1;
+        scale:1;
+    }
+}
+
+.right{
+    flex:1;
+
+    font-family: arial,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+    padding: 20px 50px 50px 250px;
+
+
+    animation: appear-right linear;
+    animation-duration: 3s;
+    animation-timeline:scroll();
+    animation-range: 0% 30% ;
+}
+
+
+.left{
+    flex:1;
+
+    font-family: Arial, Helvetica, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   
+    padding: 20px 50px 10px 10px;   
+    
+
+    animation: appear-left linear;
+    animation-duration: 3s;
+    animation-timeline: scroll();
+    animation-range:0% 30%;
+
+}
+.Letter{
+    background-image: url(https://wallpapercave.com/wp/wp12420085.jpg);
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    mix-blend-mode: screen;
+    
+
+    display: inline;
+
+
+    /*font-size: 140px;*/
+    font-size: 20vh;
+
+
+    animation: enter-right 1000ms 0ms ease-out both;
+}
+.word{
+    background-image: url(https://wallpapercave.com/wp/wp12420085.jpg);
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    
+
+
+
+    display: inline;
+
+
+    /*font-size: 62px; */
+    font-size: 18vh;
+    
+    
+    animation: enter-right 1000ms 0ms ease-out both;
+}
