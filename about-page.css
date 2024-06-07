@@ -1,0 +1,37 @@
+.about{
+    display: flex;
+    position: relative;
+
+    flex: 0 1 auto;
+
+    height: 200px;
+    width: 100%;
+    background-color: pink;
+
+    font-family: Ailerons;
+
+
+    align-items: center;
+    justify-content: center;
+
+
+
+}
+
+.about-title{
+    position: absolute;
+    top:-100px;
+
+    
+    padding: 10px 20px 10px 20px;
+
+    font-size: 50px;
+
+    border: black solid 3px;
+    border-radius: 12px;
+}
+.vertical-line-aboutPage{
+    width: 10px;
+    height: 100%;
+    background-color: black;
+}
