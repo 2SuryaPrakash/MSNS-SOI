@@ -1,20 +1,45 @@
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 54%}
+    50%{background-position:100% 47%}
+    100%{background-position:0% 54%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 54%}
+    50%{background-position:100% 47%}
+    100%{background-position:0% 54%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 54%}
+    50%{background-position:100% 47%}
+    100%{background-position:0% 54%}
+}
+
 .about{
     display: flex;
     position: relative;
 
+    align-items: center;
+    justify-content: space-around;
+
     flex: 0 1 auto;
 
-    height: 200px;
-    width: 100%;
-    background-color: pink;
+    height: 70vh;
+    
 
-    font-family: Ailerons;
+    padding: 0px 0px 0px 0px;
 
+    background-color: rgb(190, 188, 131);
 
-    align-items: center;
-    justify-content: center;
+    font-family: "Caveat","Quintessential",Ailerons;
+    font-weight: bold;
 
+    background: linear-gradient(58deg,black, #2c2c2c,  #000000,rgb(34, 34, 34));
+    background-size: 800% 800%;
 
+    -webkit-animation: AnimationName 51s ease infinite;
+    -moz-animation: AnimationName 51s ease infinite;
+    animation: AnimationName 51s ease infinite;
 
 }
 
@@ -25,13 +50,239 @@
     
     padding: 10px 20px 10px 20px;
 
-    font-size: 50px;
+    font-size: 45px;
 
     border: black solid 3px;
     border-radius: 12px;
 }
+
+
+.about-section-navigator{
+    position: absolute;
+    top:-180px;
+}
+
+
+
 .vertical-line-aboutPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    align-items: center;
+
+
     width: 10px;
     height: 100%;
+    
+    background-color:rgb(152, 152, 152);
+
+    z-index: 50;
+    position: relative;
+    top:0px;
+    bottom:30px;
+
+    margin: 0px 60px 0px 60px;
+}
+.vertical-line-end{
+    width:10px;
+    border-radius: 50%;
+
     background-color: black;
+
+    position: absolute;
+    bottom: -30px;
+}
+
+.circle2{
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    top:-6px;
+    
+
+    z-index: 50;
+
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgb(133, 133, 133);
+
+    margin: 0px 0px 50px 0px;
+
+
+}
+
+
+.team-intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-wrap: nowrap;
+    
+    top:12px ;
+    left:-150px;
+
+    padding: 5px 150px 0px 150px;
+    border-radius: 23px;
+    
+    width: 100%;
+
+    background: rgba(209, 208, 208, 0.888);
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+
+    
+}
+
+.TeamName{
+    font-size: 23px;
+    
+    font-family:"Lora","Bebas Neue","Ruda",Montserrat,'Montserrat Alternates';   
+    font-style: italic; 
+    font-weight: 700;
+}
+
+.circle{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    z-index: 50;
+
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgb(139, 139, 139);
+
+    margin: 20px 0px 10px 0px;
+
+    
+}
+
+.circle1{
+    
+
+
+    position: absolute;
+    top:0;
+
+    z-index: 54;
+
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgba(0, 0, 0, 0.774);
+
+  
+}
+.circle1-special{
+    
+
+
+    position: absolute;
+    top:0;
+
+    z-index: 54;
+
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgb(9, 9, 9);
+
+  
+}
+
+.about-details-left{
+    padding: 5px 15px 5px 15px;
+
+    width: auto;
+
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+
+    font-family: "Ruda",roboto,monospace;
+
+    background-color: rgba(64, 64, 64, 0.514);
+
+    border-radius: 12px;
+
+    position: absolute;
+    right:20px;
+
+    z-index: 48;
+}
+
+.about-details-right{
+    padding: 5px 10px 5px 10px;
+
+    width: auto;
+
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+
+    font-family: "Ruda",roboto,monospace;
+
+    background-color: rgba(64, 64, 64, 0.514);
+
+    border-radius: 12px;
+
+    position: absolute;
+    left:22px;
+
+    z-index: 48;
+}
+
+.about-name{
+    
+    text-wrap: nowrap;
+}
+
+
+
+
+.about-project-description-right,.about-project-description-left{
+    background-color: rgb(17, 55, 113);
+    color: white;
+
+    height: 205px;
+
+    display: flex;
+    z-index: 50;
+
+    margin: 90px 0px 0px 0px;
+
+    font-family: "Ruda",roboto;
+
+    border-radius: 15px;
+
+    padding: 20px 20px ;
+
+    box-shadow: -18px -15px 45px 10px rgb(25,25,25);
+
+    backdrop-filter: blur(20px);
+
+    
+}
+
+.about-project-description-left{
+    background-color: rgb(107, 33, 33);
+    box-shadow: 18px 15px 45px 10px rgb(25, 25, 25);
+    
 }

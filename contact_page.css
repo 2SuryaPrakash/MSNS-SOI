@@ -1,0 +1,137 @@
+.contact-page{
+    background-color: rgb(16, 16, 16);
+
+    height: 71vh;
+    width: 100%;
+
+   padding: 30px 0px 30px 0px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.contact-page-title{
+  font-family: "Caveat","Trochut","Tangerine","Quintessential";
+  font-size: 55px;
+
+  color: rgb(217, 215, 215);
+
+  margin: 0px 0px 40px 0px;
+}
+
+.contact-page-details{
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.spacer-contact-about{
+
+    height: 40px;
+    width: 100%;
+    background-color: rgb(16, 16, 16);
+    z-index: 51;
+}
+
+.card{
+    flex:1;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0px 25px 0px 25px;
+
+    background-color: rgb(40, 39, 39);
+    color: rgb(187, 185, 185);
+
+    font-family: "Ruda",Montserrat;
+
+    border-radius: 20px;
+
+    box-shadow: 10px 10px 35px 10px rgba(245, 245, 245, 0.236);
+
+    height: 50vh;
+}
+
+.links{
+    height: 10px;
+    width: 10px;
+
+    padding:10px 10px 10px 10px;
+
+    
+
+}
+.card-name{
+    font-weight: bold;
+    font-size: 21px;
+    padding: 20px 0px 10px 0px;
+    
+}
+
+.card-description{
+    color: rgb(138, 131, 131);
+    font-family: "Bebas Neue","Playwrite NG Modern";
+    font-size: 16px;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+/*Icons*/
+.social-icons{
+	padding:20px;
+	background-color:transparent;
+  text-align: center;
+    
+}
+.social-icons a{
+	color:#615959;
+  line-height:30px;
+  font-size:20px;
+  margin: 0 5px;
+  text-decoration:none;
+  
+}
+.social-icons a i{
+	line-height:30px;
+  font-size:30px;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1); 
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1); 
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+}
+.social-icons a:hover i{
+  box-shadow: 0px 0px 150px #000000;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);   
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  transform: scale(1.2);
+
+  color: rgb(190, 190, 190);
+}
+
+
+.links{
+    width: 10px;
+}
