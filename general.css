@@ -12,9 +12,16 @@ a{
     text-decoration: none;
 }
 
-.lightmode body{
+.lightmode{
     filter: invert(1) hue-rotate(180);
 }
+
+
+/*Scroll-behavior*/
+html{
+    scroll-behavior: smooth; 
+}
+
 
 
 
