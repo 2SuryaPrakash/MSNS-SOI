@@ -17,19 +17,19 @@
 
 .about{
     display: flex;
+    flex-direction: column;
     position: relative;
 
     align-items: center;
     justify-content: space-around;
 
-    flex: 0 1 auto;
+   
 
-    height: 70vh;
+    height: 75vh;
     
-
+    margin: 10px 0px 30px 0px;
     padding: 0px 0px 0px 0px;
 
-    background-color: rgb(190, 188, 131);
 
     font-family: "Caveat","Quintessential",Ailerons;
     font-weight: bold;
@@ -67,7 +67,104 @@
     top:-180px;
 }
 
+.about-page-content{
 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-around;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.about-project-description-right,.about-project-description-left{
+    background-color: rgb(17, 55, 113);
+    background-color: rgb(90, 85, 85);
+    background-color: rgba(193, 147, 33, 0.698);
+    background-color: rgba(36, 35, 35, 0.698);
+
+
+    max-width: 350px;
+    min-width: 300px;
+    
+    flex:2;
+    color: rgb(247, 245, 245);
+
+    height: 205px;
+
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 50;
+
+    margin: 9px 50px 0px 50px;
+
+    font-family: "Ruda",roboto;
+
+    border-radius: 15px;
+
+    padding: 20px 20px ;
+
+    box-shadow: 5px 5px 45px 3px rgb(223, 221, 221);
+    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
+
+
+    backdrop-filter: blur(20px);
+
+    
+}
+
+.about-project-description-left{
+    background-color: rgba(36, 35, 35, 0.698);
+    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
+    
+}
+
+.about-project-description-centre{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0px 40px 0px 50px 0px;
+
+    width: 300px;
+}
+
+@media (max-width:800px) and (min-width:0px){
+    .about{
+      height: 177vh;
+      
+    }
+    .about-project-description-centre{
+        width: 600px;
+    }
+    
+    
+   
+  }
+
+  
+  @media (max-width:1250px) and (min-width:801px){
+    .about{
+      height: 175vh;
+    }
+    .about-project-description-centre{
+        margin: 40px 0px 40px 0px;
+        width: 900px;
+    }
+    
+
+    
+    
+    
+  }
+  
+ 
 
 .vertical-line-aboutPage{
     display: flex;
@@ -267,40 +364,3 @@
 
 
 
-.about-project-description-right,.about-project-description-left{
-    background-color: rgb(17, 55, 113);
-    background-color: rgb(90, 85, 85);
-    background-color: rgba(193, 147, 33, 0.698);
-    background-color: rgba(36, 35, 35, 0.698);
-
-
-
-    color: rgb(247, 245, 245);
-
-    height: 205px;
-
-    display: flex;
-    z-index: 50;
-
-    margin: 90px 0px 0px 0px;
-
-    font-family: "Ruda",roboto;
-
-    border-radius: 15px;
-
-    padding: 20px 20px ;
-
-    box-shadow: 5px 5px 45px 3px rgb(223, 221, 221);
-    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
-
-
-    backdrop-filter: blur(20px);
-
-    
-}
-
-.about-project-description-left{
-    background-color: rgba(36, 35, 35, 0.698);
-    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
-    
-}
