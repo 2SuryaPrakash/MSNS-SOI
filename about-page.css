@@ -55,10 +55,10 @@
 
     padding: 10px 25px 10px 20px;
 
-    font-size: 45px;
+    font-size: 55px;
 
-    border-radius: 12px;
-    border: 2px rgba(193, 147, 33, 0.698) solid;
+    /*border-radius: 12px;
+    border: 2px rgba(193, 147, 33, 0.698) solid;*/
 }
 
 
@@ -110,7 +110,7 @@
     padding: 20px 20px ;
 
     box-shadow: 5px 5px 45px 3px rgb(223, 221, 221);
-    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
+    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.308);
 
 
     backdrop-filter: blur(20px);
@@ -119,9 +119,8 @@
 }
 
 .about-project-description-left{
-    background-color: rgba(36, 35, 35, 0.698);
-    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
-    
+    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.308);
+ 
 }
 
 .about-project-description-centre{
