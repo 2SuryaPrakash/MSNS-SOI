@@ -20,16 +20,16 @@
     background-color: rgba(195, 188, 188, 0.055);
     color: black;
 
-    background-image:  repeating-radial-gradient(circle at 0 0, transparent 0, rgba(0, 0, 0, 0.868) 100px), repeating-linear-gradient(rgba(0, 0, 0, 0.748), rgba(0, 0, 0, 0.19));
-    background-color: rgba(0, 0, 0, 0.873);
+    background-image:  repeating-radial-gradient(circle at 0 0, transparent 0, rgba(32, 31, 31, 0.323) 100px), repeating-linear-gradient(rgba(0, 0, 0, 0.748), rgba(0, 0, 0, 0.19));
+    background-color: rgba(16, 16, 16, 0.873);
     color:rgb(177, 177, 177);   
 
 
-    animation: appear-right linear;
+    animation: exit linear;
     animation-duration: 3s;
     
     animation-timeline:scroll();
-    animation-range: 100% 100% ;
+    animation-range: 50% 0% ;
 
 
 }
@@ -50,19 +50,19 @@
 }
 
 
-/*@keyframes enter-left{
+@keyframes exit{
     from{
-        transform: translateX(-50%);
+        transform: translatey(-20%);
     }
 
-    50%{
-        scale:0.5;
-    }
+   
+
     to{
-        scale:1;
+        scale:0;
+        opacity: 0;
         transform: none;
     }
-}*/
+}
 
 
 
@@ -106,7 +106,7 @@
 
     
 
-    10%{
+    50%{
         opacity: 0;
         scale: 0;
         transform: translateX(100%) rotate(-5deg);
@@ -134,11 +134,11 @@
     padding: 0px 0px 0px 0px;
 
 
-    animation: appear-right linear;
-    animation-duration: 3s;
+    animation: exit linear ;
+    animation-duration: 10s;
     
     animation-timeline:scroll();
-    animation-range: 0% 30% ;
+    animation-range: 0% 50% ;
 
     
 }
@@ -156,8 +156,8 @@
     padding: 0px 0px 0px 0px;
     
 
-    animation: appear-left linear;
-    animation-duration: 3s;
+    animation:exit linear ;
+    animation-duration: 5s;
     animation-timeline: scroll();
     animation-range:0% 30%;
 
