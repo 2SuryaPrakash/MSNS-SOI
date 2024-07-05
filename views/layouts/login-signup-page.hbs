@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/login.css">
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/landing-page.css">
+    <link rel="stylesheet" href="styles/about-page.css">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/contact_page.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400..700&family=Julee&family=Lora:ital,wght@0,400..700;1,400..700&family=Marck+Script&family=Playwrite+NG+Modern:wght@100..400&family=Quintessential&family=Righteous&family=Ruda:wght@400..900&family=Tangerine:wght@400;700&family=Trochut:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="scripts/loginregister.js" defer></script>
+    
+
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+
+<body>
+    {{#if successMessage}}
+            <style>
+                .alert {
+                padding: 20px;
+                background-color: grey;
+                color: yellow;
+                }
+
+                .closebtn {
+                margin-left: 15px;
+                color: white;
+                font-weight: bold;
+                float: right;
+                font-size: 22px;
+                line-height: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+                }
+
+                .closebtn:hover {
+                color: yellow;
+                }
+            </style>
+    
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Success!</strong> User as been created. Please proceed to login.
+        </div> 
+            
+    {{/if}}
+    {{#if invalidLogin}}
+            <style>
+                .alert {
+                padding: 20px;
+                background-color: grey;
+                color: yellow;
+                }
+
+                .closebtn {
+                margin-left: 15px;
+                color: white;
+                font-weight: bold;
+                float: right;
+                font-size: 22px;
+                line-height: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+                }
+
+                .closebtn:hover {
+                color: yellow;
+                }
+            </style>
+    
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Authentication Error!</strong> Please Login Again.
+        </div> 
+            
+    {{/if}}
+    
+    {{!-- <div class="window-header">
+           
+        <div class="left-header" >
+            <nav class="nav-left-header">
+                <div class="logo">
+                    <a class="nav-links" href="#">LOGO?</a>
+                </div>
+            </nav>
+        </div>
+        <div class="mid-header">
+
+        </div>
+        <div class="right-header">
+            <nav class="nav-right-header">
+                <div class="header-navigation">
+                    <a class="nav-links" href="#">Explore</a>
+                </div>
+                <div class="header-navigation">
+                    <a class="nav-links" href="#About-Page">About</a>
+                </div>
+                <div class="header-navigation">
+                    <a  class="nav-links" href="#contact">Contact</a>
+                </div>
+                <div class="header-navigation">
+                    <a id="headerLogin" class="login-btn" href="http://localhost:5001/welcome">Login</button>
+                </div>
+                
+                
+            </nav>
+        </div>
+    </div> --}}
+
+    <div class="container {{containerState}}" id="container">
+        <div class="form-container sign-up">
+            
+            <form action="http://localhost:5001/signup" method="post">
+                <h1>Create Account</h1>
+                <input type="text" placeholder="Name" name="name" >
+                <input type="text" placeholder="Username" name="username">
+                <div>{{usernameCreate}}</div>
+                <input type="email" placeholder="Email" name="email">
+                <div>{{emailCreate}}</div>
+                <input type="password" placeholder="Password" name="password">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="http://localhost:5001/login" method="post">
+                <h1>Welcome Back!</h1>
+                <input type="text" placeholder="Username" name="username">
+                <div>{{usernameLogin}}</div>
+                <input type="password" placeholder="Password" name="password">
+                <div>{{passwordLogin}}</div>
+                <a href="#"><strong>Forgot Password?</strong></a>
+                <button type="submit" >Log In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Already have an account?</h1>
+                    <p>Log in now to access your favourite e-library!</p>
+
+                    <button class="hidden" id="login">Log in</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>New Here?</h1>
+                    <p>Sign up with us to access 100+ books now!!</p>
+
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

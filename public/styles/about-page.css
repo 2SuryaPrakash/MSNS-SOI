@@ -1,0 +1,366 @@
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 54%}
+    50%{background-position:100% 47%}
+    100%{background-position:0% 54%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 54%}
+    50%{background-position:100% 47%}
+    100%{background-position:0% 54%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 54%}
+    50%{background-position:100% 47%}
+    100%{background-position:0% 54%}
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    align-items: center;
+    justify-content: space-around;
+
+   
+
+    height: 75vh;
+    
+    margin: 10px 0px 30px 0px;
+    padding: 0px 0px 0px 0px;
+
+
+    font-family: "Caveat","Quintessential",Ailerons;
+    font-weight: bold;
+
+    /*background: linear-gradient(58deg,black, #2c2c2c,  #000000,rgb(34, 34, 34));
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 51s ease infinite;
+    -moz-animation: AnimationName 51s ease infinite;
+    animation: AnimationName 51s ease infinite;*/
+
+
+    background-color: rgb(16, 16, 16);
+
+
+}
+
+.about-title{
+    position: absolute;
+    top:-100px;
+
+    color: rgb(212, 211, 211);
+
+    padding: 10px 25px 10px 20px;
+
+    font-size: 45px;
+
+    border-radius: 12px;
+    border: 2px rgba(193, 147, 33, 0.698) solid;
+}
+
+
+.about-section-navigator{
+    position: absolute;
+    top:-180px;
+}
+
+.about-page-content{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-around;
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.about-project-description-right,.about-project-description-left{
+    background-color: rgb(17, 55, 113);
+    background-color: rgb(90, 85, 85);
+    background-color: rgba(193, 147, 33, 0.698);
+    background-color: rgba(36, 35, 35, 0.698);
+
+
+    max-width: 350px;
+    min-width: 300px;
+    
+    flex:2;
+    color: rgb(247, 245, 245);
+
+    height: 205px;
+
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 50;
+
+    margin: 9px 50px 0px 50px;
+
+    font-family: "Ruda",roboto;
+
+    border-radius: 15px;
+
+    padding: 20px 20px ;
+
+    box-shadow: 5px 5px 45px 3px rgb(223, 221, 221);
+    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
+
+
+    backdrop-filter: blur(20px);
+
+    
+}
+
+.about-project-description-left{
+    background-color: rgba(36, 35, 35, 0.698);
+    box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
+    
+}
+
+.about-project-description-centre{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0px 40px 0px 50px 0px;
+
+    width: 300px;
+}
+
+@media (max-width:800px) and (min-width:0px){
+    .about{
+      height: 177vh;
+      
+    }
+    .about-project-description-centre{
+        width: 600px;
+    }
+    
+    
+   
+  }
+
+  
+  @media (max-width:1250px) and (min-width:801px){
+    .about{
+      height: 175vh;
+    }
+    .about-project-description-centre{
+        margin: 40px 0px 40px 0px;
+        width: 900px;
+    }
+    
+
+    
+    
+    
+  }
+  
+ 
+
+.vertical-line-aboutPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    align-items: center;
+
+
+    width: 10px;
+    height: 100%;
+    
+    background-color:rgb(152, 152, 152);
+
+    z-index: 50;
+    position: relative;
+    top:0px;
+    bottom:30px;
+
+    margin: 0px 100px 0px 100px;
+}
+.vertical-line-end{
+    width:10px;
+    border-radius: 50%;
+
+    background-color: black;
+
+    position: absolute;
+    bottom: -30px;
+}
+
+.circle2{
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    top:-14px;
+    
+
+    z-index: 50;
+
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgb(234, 229, 229);
+
+    margin: 0px 0px 55px 0px;
+
+
+}
+
+
+.team-intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-wrap: nowrap;
+    
+    top:12px ;
+    left:-150px;
+
+    padding: 5px 150px 0px 150px;
+    border-radius: 23px;
+    
+    width: 100%;
+
+    background: rgba(209, 208, 208, 0.888);
+    background-color: rgba(182, 139, 29, 0.689);
+
+    color: rgb(0, 0, 0);
+    color: white;
+    backdrop-filter: blur(10px);
+
+    
+}
+
+.TeamName{
+    font-size: 23px;
+    
+    font-family:"Lora","Bebas Neue","Ruda",Montserrat,'Montserrat Alternates';   
+    font-style: italic; 
+    font-weight: 700;
+}
+
+.circle{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    z-index: 50;
+    
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgb(255, 255, 255);
+
+    margin: 20px 0px 10px 0px;
+
+    
+}
+
+.circle1{
+    
+
+
+    position: absolute;
+    top:0;
+    left:0px;
+
+    z-index: 54;
+
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgba(0, 0, 0, 0.855);
+
+  
+}
+.circle1-special{
+    
+
+
+    position: absolute;
+    top:0px;
+    left:0px;
+
+    z-index: 54;
+
+
+    height: 30px;
+    width: 30px;
+
+    border-radius: 50%;
+
+    background-color: rgb(9, 9, 9);
+
+  
+}
+
+.about-details-left{
+    padding: 5px 15px 5px 15px;
+
+    width: auto;
+
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+
+    font-family: "Ruda",roboto,monospace;
+
+    background-color: rgba(220, 219, 219, 0.3);
+
+    border-radius: 18px;
+
+    position: absolute;
+    right:20px;
+
+    z-index: 48;
+}
+
+.about-details-right{
+    padding: 5px 10px 5px 10px;
+
+    width: auto;
+
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+
+    font-family: "Ruda",roboto,monospace;
+
+    background-color: rgba(220, 219, 219, 0.3);
+
+    border-radius: 18px;
+
+    position: absolute;
+    left:22px;
+
+    z-index: 48;
+}
+
+.about-name{
+    
+    text-wrap: nowrap;
+}
+
+
+
+
