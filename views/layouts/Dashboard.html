@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+
+        <!--CSS FILES-->
+        <link rel="stylesheet" href="dashboard-css/general.css">
+        <link rel="stylesheet" href="dashboard-css/header.css">
+        <link rel="stylesheet" href="dashboard-css/dashboard.css">
+
+        <!--JS FILES-->
+
+        <!--ADDITIONAL IMPORTED FONT FILES-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400..700&family=Julee&family=Lora:ital,wght@0,400..700;1,400..700&family=Marck+Script&family=Playwrite+NG+Modern:wght@100..400&family=Quintessential&family=Righteous&family=Ruda:wght@400..900&family=Tangerine:wght@400;700&family=Trochut:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Felipa&display=swap" rel="stylesheet">
+
+        <!--ADDITIONALLY IMPORTED ICONS FILES-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+
+
+
+
+    </head>
+
+
+    <body>
+         <!--WINDOW HEADER -->
+        <!--It is Divided into 3 sections - the left header, the mid header (under development) , the right header-->
+        <div class="window-header">
+           
+            <div class="left-header" >
+                <nav class="nav-left-header">
+                    <div class="logo">
+                        <a class="nav-links" href="./Dashboard.html">
+                            <div class="logo">
+                                <img src="Logo & Images/M.S.N.S.png" alt="" class="logo-image">
+                            </div>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="mid-header">
+            </div>
+            <div class="right-header">
+                <nav class="nav-right-header">
+                    <div class="header-navigation">
+                        <a  class="nav-links" href="./search.html">Search</a>
+                    </div>
+                    <div class="header-navigation">
+                        <a class="nav-links" href="./post-login.html#Explore">Explore</a>
+                    </div>
+                    <div class="header-navigation">
+                        <a  class="nav-links" href="./post-login.html#contact">Contact</a>
+                    </div>
+                    
+                    <div class="header-navigation">
+                        <div class="profile-navigation">
+                            <button class="profile-btn" >&#9776; Profile</button>
+                            <nav class="post-login-navigation">
+                                <a href="#" class="post-login-navigation-collapsible-panel">
+                                    Dashboard
+                                </a>
+                                <a href="./index.html" class="post-login-navigation-collapsible-panel">
+                                    sign-out
+                                </a>
+                            </nav>     
+                        </div>
+                    </div>                    
+                </nav>
+            </div>
+        </div>
+
+        <div class="dashboard-sidepanel">
+            <div class="dashboard-avatar-pic">
+                <img src="https://yt3.googleusercontent.com/coJBIm7rugfAkdb9_cw5Lry2NDnfSYDjL5MBu_R2st_YCLsZtDxYu28h2EAJzPfY8qudaF8U=s900-c-k-c0x00ffffff-no-rj" alt="" class="dashboard-avatar-pic-image">
+            </div>
+            <div class="dashboard-avatar-username">Username</div>
+            <div class="dashboard-sidepanel-logout">
+                <a href="./index.html" class="dashboard-sidepanel-logout-anchor">Logout</a>
+            </div>
+        </div>
+
+        <!--DASHBOARD-->
+        <div class="dashboard">
+            
+            
+            <div class="dashboard-details">
+                <div class="user-details">
+                    <p class="user-details-description-title">PROFILE</p>
+                    <p class="user-details-description"><strong>Name</strong> : <span class="Display-name">(name)</span></p>
+                    <p class="user-details-description"><Strong>Branch</Strong> : <span class="Display-branch">(Branch)</span></p>
+                </div>
+
+                <div class="dashboard-books-history">
+                    <div class="dashboard-books-history-title">Books Issued</div>
+                    <div class="dashboard-books-history-issued">
+                        <div class="dashboard-books-history-issued-bookCard">
+                            <div class="dashboard-books-history-issued-bookCard-bookName">
+                                BookName
+                            </div>
+                            <div class="dashboard-books-history-issued-bookCard-returnDate">
+                                <time datetime="">Return Time</time>
+                            </div>
+                            <div class="dashboard-books-history-issued-bookCard-returnButton">
+                                <button class="dashboard-books-history-issued-bookCard-returnButton-button">Return</button>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-books-history-issued-bookCard">
+                            <div class="dashboard-books-history-issued-bookCard-bookName">
+                                BookName
+                            </div>
+                            <div class="dashboard-books-history-issued-bookCard-returnDate">
+                                <time datetime="">Return Time</time>
+                            </div>
+                            <div class="dashboard-books-history-issued-bookCard-returnButton">
+                                <button class="dashboard-books-history-issued-bookCard-returnButton-button">Return</button>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-books-history-issued-bookCard">
+                            <div class="dashboard-books-history-issued-bookCard-bookName">
+                                BookName
+                            </div>
+                            <div class="dashboard-books-history-issued-bookCard-returnDate">
+                                <time datetime="">Return Time</time>
+                            </div>
+                            <div class="dashboard-books-history-issued-bookCard-returnButton">
+                                <button class="dashboard-books-history-issued-bookCard-returnButton-button">Return</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

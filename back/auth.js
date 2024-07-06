@@ -60,7 +60,8 @@ router.post('/login',async (req, res) => {
       else{
         const accessToken=jwt.sign(req.body.username,process.env.ACCESS_TOKEN_SECRET);
         req.session.accessToken=accessToken;
-        res.render('new',{title:'welcome'});
+        
+        res.render('layouts/post-login',{welcomeUser:user.name});
 
       }
     }

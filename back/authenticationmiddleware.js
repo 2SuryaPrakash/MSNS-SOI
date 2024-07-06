@@ -1,3 +1,4 @@
+const {User}=require('./schemas');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 function authenticateUser(req,res,next){
@@ -9,6 +10,8 @@ function authenticateUser(req,res,next){
             if(err){
               res.render('layouts/login-signup-page',{invalidLogin:true});
             }
+            let user=await User.findOne({username:usern})
+            req.user=user;
             next();
           });
     }

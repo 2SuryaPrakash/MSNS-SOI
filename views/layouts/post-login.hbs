@@ -3,21 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>MSNS-Personal Library Management</title>
 
         <!--CSS FILES-->
-        <link rel="stylesheet" href="styles/general.css">
-        <link rel="stylesheet" href="styles/header.css">
-        <link rel="stylesheet" href="styles/landing-page.css">
-        <link rel="stylesheet" href="styles/about-page.css">
-        <link rel="stylesheet" href="styles/button.css">
-        <link rel="stylesheet" href="styles/contact_page.css">
+        <link rel="stylesheet" href="styles/post-login-css/general.css">
         <link rel="stylesheet" href="styles/post-login-css/header.css">
+        <link rel="stylesheet" href="styles/post-login-css/landing-page.css">
+        <link rel="stylesheet" href="styles/post-login-css/about-page.css">
+        <link rel="stylesheet" href="styles/post-login-css/button.css">
+        <link rel="stylesheet" href="styles/post-login-css/contact_page.css">
+        <link rel="stylesheet" href="styles/post-login-css/explore.css">
 
         <!--JS FILES-->
         <script src="scripts/login.js" defer> </script>
         <script src="scripts/Displaymodes.js" defer ></script>
-        <script src="scripts/login-register-state.js" defer></script>
+
         <!--ADDITIONAL IMPORTED FONT FILES-->
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +30,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400..700&family=Julee&family=Lora:ital,wght@0,400..700;1,400..700&family=Marck+Script&family=Playwrite+NG+Modern:wght@100..400&family=Quintessential&family=Righteous&family=Ruda:wght@400..900&family=Tangerine:wght@400;700&family=Trochut:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
+        <link href="https://fonts.googleapis.com/css2?family=Felipa&display=swap" rel="stylesheet">
 
         <!--ADDITIONALLY IMPORTED ICONS FILES-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
@@ -41,6 +42,7 @@
     </head>
     
     <body>
+
         <!--WINDOW HEADER -->
         <!--It is Divided into 3 sections - the left header, the mid header (under development) , the right header-->
         <div class="window-header">
@@ -48,126 +50,44 @@
             <div class="left-header" >
                 <nav class="nav-left-header">
                     <div class="logo">
-                        <a class="nav-links" href="http://localhost:5001/"><img src="styles/Logo & Images/M.S.N.S.png" alt="" class="logo-image"></a>
+                        <a class="nav-links" href="./post-login.html">
+                            <div class="logo">
+                                <img src="styles/Logo & Images/M.S.N.S.png" alt="" class="logo-image">
+                            </div>
+                        </a>
                     </div>
                 </nav>
             </div>
             <div class="mid-header">
-
             </div>
             <div class="right-header">
                 <nav class="nav-right-header">
                     <div class="header-navigation">
-                        <a class="nav-links" href="#">Explore</a>
+                        <a  class="nav-links" href="http://localhost:5001/search">Search</a>
                     </div>
                     <div class="header-navigation">
-                        <a class="nav-links" href="#About-Page">About</a>
+                        <a class="nav-links" href="#Explore">Explore</a>
                     </div>
                     <div class="header-navigation">
                         <a  class="nav-links" href="#contact">Contact</a>
                     </div>
                     <div class="header-navigation">
-                        <a id="headerLogin" class="login-btn" href="http://localhost:5001/welcome">Login</button>
-                    </div>
-                    
-                    
+                        <div class="profile-navigation">
+                            <button class="profile-btn" >&#9776; Profile</button>
+                            <nav class="post-login-navigation">
+                                <a href="http://localhost:5001/dashboard" class="post-login-navigation-collapsible-panel">
+                                    Dashboard
+                                </a>
+                                <a href="./index.html" class="post-login-navigation-collapsible-panel">
+                                    sign-out
+                                </a>
+                            </nav>     
+                        </div>
+                    </div>                    
                 </nav>
             </div>
         </div>
 
-
-        <!-- POP UP LOGIN PAGE -->
-
-
-        {{!-- <nav class="login-signup-window">
-            <div class="blur-bg-overlay"></div>
-            <div class="form-popup">
-                <div class="close-form-div">           
-                        <span class="close-btn material-symbols-rounded" onclick="showpopup()">&#x2715;</span>    
-                </div>
-                <div class="form-box login">
-                    <div class="form-details">
-                        <h2 class="popup-display-head">Welcome Back</h2>
-                        <p class="popup-display-content">Please log in using your personal information to stay connected with us</p>
-                    </div>
-                    <div class="form-content">
-                        <h2>Login</h2>
-                        <form action="#" >
-                            <div class="input-field">
-                                <input type="text" name="username" id="usernameLogin" required>
-                                <label>Username</label>
-                            </div>
-                           
-                            <div id="usernameState"></div>
-                           
-                            <div class="input-field">
-                                <input type="password" name="password" id="passwordLogin" required>
-                                <label>Password</label>
-                            </div>
-
-                            <div id="passwordState"></div>
-
-                            <a href="#" class="forgot-pass">Forgot password?</a>
-                            <button type="button" class="login-form-button" id="loginButton">Log In</button>
-                        </form>
-                        <div class="bottom-link">   
-                            Don't have an account?
-                            <a href="#" id="signup-link">Signup</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-box signup">
-                    <div class="form-details">
-                        <h2 class="popup-display-head">Create account</h2>
-                        <p class="popup-display-content">To become a part if our community, please sign up using institute email</p>
-                    </div>
-                    <div class="form-content">
-                        <h2>SignUp</h2>
-                        <form action="#">
-                            <div class="input-field">
-                                <input type="text" name="name" required>
-                                <label>Enter Name</label>
-                            </div>
-                            <div class="input-field">
-                                <input type="text" name="username" id="usernameRegister" required>
-                                <label>Enter your username</label>
-                            </div>
-
-                            <div style="color: aliceblue;" id="usernameStateRegister"></div>
-
-                            <div class="input-field">
-                                <input type="email" name="email"  required>
-                                <label>Enter your email</label>
-                            </div>
-
-                            <div  style="color: aliceblue;" id="emailStateRegister"></div>
-
-                            <div class="input-field">
-                                <input type="password" name="password" required>
-                                <label>Create password</label>
-                            </div>
-                            <div class="policy-text">
-                                <input type="checkbox" id="policy"> 
-                                <label for="policy">
-                                    I agree to the
-                                    <a href="#">Terms & Conditions</a>
-                                </label>
-                            </div>
-                            <button type="button" class="login-form-button" id="registerButton">Sign Up</button>
-                        </form>
-                        <div class="bottom-link">   
-                            Already have an account?
-                            <a href="#" id="login-link">Login</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-                
-         
-
-
-        </nav> --}}
 
 
 
@@ -199,93 +119,84 @@
                     
             
                 </div>
-            </div>    
+
+            </div>  
+            <div class="post-login-landing-page-active">
+                <div class="welcome-user">Wecome back {{welcomeUser}}!</div>
+            </div>  
+        </div>
+
+
+
+        <!--EXPLORE PAGE-->
+
+        <div class="explore-page" >
+            <div class="explore-page-identifier" id="Explore"></div>
+            <div class="explore-page-title">
+                Explore
+            </div>
+            <div class="explore-page-display">
+                <a href="" class="explore-page-book">
+                    <div class="explore-page-book-contents">
+                        <div class="book-title">
+                            Infernal Devices
+                        </div>
+                        <div class="book-title-subheading">
+                            Clockwork Angel
+                        </div>
+                        <div class="book-author">
+                            Cassandra Clare
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="explore-page-book">
+                    <div class="explore-page-book-contents">
+                        <div class="book-title">
+                            Infernal Devices
+                        </div>
+                        <div class="book-title-subheading">
+                            Clockwork Prince
+                        </div>
+                        <div class="book-author">
+                            Cassandra Clare
+                        </div>
+                    </div>
+                </a>
+                <a href="" class="explore-page-book">
+                    <div class="explore-page-book-contents">
+                        <div class="book-title">
+                            Infernal Devices
+                        </div>
+                        <div class="book-title-subheading">
+                            Clockwork Princess
+                        </div>
+                        <div class="book-author">
+                            Cassandra Clare
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="explore-page-navigation">
+                <button class="explore-page-navigation-IssueBook">Issue a new Book</button>
+            </div>
         </div>
 
         <div class="spacer" style="height: 150px; margin-bottom: 0px;     background-color: rgb(16, 16, 16);"></div>
 
-        <div   class="about">
+        
 
-            <div id="About-Page" class="about-section-navigator"></div>
+        
 
-            <div class="about-title">About</div>
-            
-            <div class="about-page-content">
-                <div class="about-project-description-left">
-                    This project is a library management website.
-                </div>
-                
-                <div class="about-project-description-centre">
-                    <div class="vertical-line-aboutPage">
-    
-                        <div class="circle2">
-                            <div class="team-intro">
-                                <p class="TeamName">The Team</p>
-                            </div>
-                            <div class="circle1-special"></div>
-                        </div>
-        
-                        <div class="circle">
-                            <div class="about-details-left">
-                                <p class="about-name">Meda Varshith</p>
-                                
-                            </div>
-        
-                            <div class="circle1"></div>
-        
-                        </div>
-        
-                        <div class="circle">
-                            <div class="about-details-right">
-                                <p class="about-name">Nihar Sagar G</p>
-                            </div>
-                            <div class="circle1"></div>
-                        </div>
-        
-                        <div class="circle">
-                            <div class="about-details-left">
-                                <p class="about-name">Saipushkar Nagaraj</p>
-                            </div>
-        
-                            <div class="circle1"></div>
-        
-                        </div>
-        
-                        <div class="circle">
-                            <div class="about-details-right">
-                                <p class="about-name">Surya Prakash S</p>
-                            </div>
-        
-                            <div class="circle1"></div>
-        
-                        </div>
-        
-        
-                        <div class="vertical-line-end">
-        
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-                
-    
-                <div class="about-project-description-right">
-                    <p>SOI-2024</p>
-                    <p>WebDev Event - DevShelf</p>
-                    <p>Access The git-hub repository here </p>
-                    <p><a href="https://github.com/2SuryaPrakash/MSNS-SOI" target="_blank">Click Here</a></p>
-                </div>
-    
-            </div>
 
-            
-        </div>
+      
 
         <div class="spacer-contact-about"></div>
 
 
-        <div class="contact-page" id="contact">
+        <div class="contact-page" >
+            <div class="contact-page-identifier" id="contact">
+            </div>
             <div class="contact-page-title">
                 Contact Us
             </div>

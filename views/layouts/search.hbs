@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+
+        <!--CSS FILES-->
+        <link rel="stylesheet" href="styles/search-css/general.css">
+        <link rel="stylesheet" href="styles/search-css/header.css">
+        <link rel="stylesheet" href="styles/search-css/search.css">
+      
+
+        <!--JS FILES-->
+
+        <!--ADDITIONAL IMPORTED FONT FILES-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400..700&family=Julee&family=Lora:ital,wght@0,400..700;1,400..700&family=Marck+Script&family=Playwrite+NG+Modern:wght@100..400&family=Quintessential&family=Righteous&family=Ruda:wght@400..900&family=Tangerine:wght@400;700&family=Trochut:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Felipa&display=swap" rel="stylesheet">
+
+
+        <!--ADDITIONALLY IMPORTED ICONS FILES-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+
+
+
+
+    </head>
+
+
+    <body>
+         <!--WINDOW HEADER -->
+        <!--It is Divided into 3 sections - the left header, the mid header (under development) , the right header-->
+        <div class="window-header">
+           
+            <div class="left-header" >
+                <nav class="nav-left-header">
+                    <div class="logo">
+                        <a class="nav-links" href="http://localhost:5001/search">
+                            <div class="logo">
+                                <img src="styles/Logo & Images/M.S.N.S.png" alt="" class="logo-image">
+                            </div>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="mid-header">
+            </div>
+            <div class="right-header">
+                <nav class="nav-right-header">
+                    <div class="header-navigation">
+                        <a class="nav-links" href="./post-login.html#Explore">Explore</a>
+                    </div>
+                    <div class="header-navigation">
+                        <a  class="nav-links" href="./post-login.html#contact">Contact</a>
+                    </div>
+                    <div class="header-navigation">
+                        <div class="profile-navigation">
+                            <button class="profile-btn" >&#9776; Profile</button>
+                            <nav class="post-login-navigation">
+                                <a href="./Dashboard.html" class="post-login-navigation-collapsible-panel">
+                                    Dashboard
+                                </a>
+                                <a href="./index.html" class="post-login-navigation-collapsible-panel">
+                                    sign-out
+                                </a>
+                            </nav>     
+                        </div>
+                    </div>                    
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="search">
+            <div class="search-searchbar">
+                
+                <input type="text" placeholder="Search" class="search-searchbar-input">
+            </div>
+
+            <div class="search-filters">
+                <form action="search-filters-form">
+                    <select name="sort" id="sort" class="search-filters-form-options">
+                        <option value="" selected="selected">Ascending</option>
+                        <option value="" selected="selected">Descending</option>
+                        <option value="" selected="selected">Sort</option>
+                    </select>
+
+                    <select name="Subject" id="Subject" class="search-filters-form-options">
+                        <option value="" selected="selected">Engineering Physics</option>
+                        <option value="" selected="selected">Chemical Engineering</option>
+                        <option value="" selected="selected">Civil Engineering</option>
+                        <option value="" selected="selected" >Electrical Engineering</option>
+                        <option value="" selected="selected" >Mechanical Engineering</option>
+                        <option value="" selected="selected">Computer Science</option>
+                        <option value="" selected="selected">Subject</option>
+                    </select>
+
+                    <select name="Subject" id="Subject" class="search-filters-form-options">
+                        <option value="" selected="selected">Genre</option>
+                    </select>
+
+
+
+                    <input type="submit" value="Submit" class="search-filters-form-options-input">
+                </form>
+            </div>
+            <div class="search-bookDisplay">
+                <div class="search-bookDisplay-card">
+
+                    <div class="search-bookDisplay-card-inner">
+
+                        <div class="search-bookDisplay-card-front">
+                            <div class="search-bookDisplay-card-image-div">
+                                <img src="styles/Logo & Images/cs.jpg" alt="" class="search-bookDisplay-card-image">
+                            </div>
+                            <div class="search-bookDisplay-card-title">
+                                Introduction to Algorithms
+                            </div>
+                            <div class="search-bookDisplay-card-author">
+                                Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
+                            </div>      
+                        </div>
+    
+                        <div class="search-bookDisplay-card-back">
+                            <div class="search-bookDisplay-card-back-author">
+                                <strong class="card-title">Author : </strong>
+                                <p>
+                                    Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
+                                </p>
+                            </div>
+                            <div class="search-bookDisplay-card-back-description">
+                                <strong class="card-title">Description : </strong>
+                                <p>
+                                    Comprehensive guide to algorithms with detailed explanations.
+                                </p>
+                            </div>
+                            <div class="search-bookDisplay-card-back-genre">
+                                <strong class="card-title">Genre : </strong>
+                                <p>
+                                    Algorithms
+                                </p>
+                            </div>
+                            <div class="search-bookDisplay-card-back-count">
+                                <strong class="card-title">Count : </strong>
+                                <p>9</p>
+                            </div>
+
+                            <div class="search-bookDisplay-card-back-issue">
+                                <button class="search-bookDisplay-card-back-issue-button">
+                                    ISSUE
+                                </button>
+                            </div>
+
+
+                        </div>
+    
+                    </div>  
+
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+    </body>
+    
+</html>

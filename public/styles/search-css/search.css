@@ -1,0 +1,312 @@
+.search{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    height: 100%;
+
+    padding: 40px 30px 40px 30px;
+
+    background-color: transparent;
+
+    font-family: 'ruda';
+}
+
+.search-searchbar{
+    flex: 2;
+    display: flex;
+
+    position: relative;
+
+    background-color: transparent;
+
+    margin: 10px 0 30px 0;
+}
+
+.search-searchbar-input{
+    padding: 10px 0 10px 30px;
+
+    background-color: rgb(140, 140, 140,0.123);
+    color: white;
+
+    width: 63vw;
+
+    border-radius: 15px;
+    border: none;
+    outline: none;
+
+    font-family: 'ruda';
+    font-size: 13px;
+
+    
+}
+
+.search-searchbar-input:focus{
+    box-shadow: 0 0 15px 1px rgba(255, 255, 255, 0.197);
+}
+
+
+
+
+/*SEARCH GRID TO SEARCH FOR A SPECIFIC BOOK*/
+
+.search-bookDisplay{
+    background-color: rgba(140, 140, 140, 0.123);
+    color: rgb(222, 221, 221); 
+
+    border-radius: 20px;
+
+    padding: 20px 10px 80px 10px;   
+
+    width: 90vw;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search-bookDisplay-card{
+    background-color: rgba(18, 18, 18, 0.725);
+    background-color: transparent;
+
+    height: 2.5vh;
+    width: 2.5vw;
+
+    min-width: 180px;
+    min-height: 260px;
+
+    height: 16em;
+    width: 12em;
+
+    border-radius: 15px;
+    padding: 10px 5px 5px 5px;
+
+
+
+    
+
+    position: relative;
+
+    perspective: 1000px;
+
+    
+}
+
+
+.search-bookDisplay-card-front{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+
+    padding: 10px 10px 5px 10px;
+
+}
+.search-bookDisplay-card-image-div{
+    flex:6;
+
+    border-radius: 15px;
+
+    width: 100%;
+
+    padding: 2px;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bookDisplay-card-image{
+  
+  width: 90%;
+  border-radius: 10px;
+  height: inherit;
+}
+
+.search-bookDisplay-card-title{
+    flex:2;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    text-align: center;
+
+    padding: 3px 0 3px 0;
+}
+
+.search-bookDisplay-card-author{
+    flex:1;
+
+    font-size:10px;
+    text-align: center;
+    padding: 3px 0 2px 0;
+}
+
+
+.search-bookDisplay-card-back{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+
+    padding: 10px 10px 5px 10px;
+
+    font-size: 12px;
+
+    position: absolute;
+
+   
+}
+
+.search-bookDisplay-card-inner{
+
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition:  0.8s;
+    transform-style: preserve-3d;
+}
+
+
+.search-bookDisplay-card:hover .search-bookDisplay-card-inner{
+    transform: rotateY(180deg);
+}
+
+.search-bookDisplay-card-front,.search-bookDisplay-card-back{
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+
+    padding: 20px 15px;
+}
+
+.search-bookDisplay-card-front{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-color: #171717;
+}
+
+.search-bookDisplay-card-back{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-color: #171717;
+
+    transform: rotateY(180deg);
+
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+
+
+.search-bookDisplay-card-front:hover .search-bookDisplay-card-back{
+    transform: rotateY(180deg);
+    opacity: 1;
+
+}
+
+
+.search-bookDisplay-card-back-issue{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bookDisplay-card-back-issue-button{
+    padding: 10px 15px;
+
+    background-color: rgb(74, 74, 74);
+    color: white;
+
+    border: none;
+    border-radius: 1em; 
+
+}
+
+.search-bookDisplay-card-back-issue-button:hover{
+    background-color: rgb(81, 81, 81);
+}
+
+.search-bookDisplay-card-back-issue-button:active{
+    background-color: rgb(100, 99, 99);
+}
+
+
+
+/*SEARCH FILTERS*/
+.search-filters{
+    background-color: rgba(140, 140, 140, 0.123);
+    color: white;
+
+    
+
+    padding:10px 10px 10px 10px;
+    margin: 0px 0 30px 0;
+
+    border-radius: 0.8em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    flex-wrap: nowrap;
+
+}
+
+.search-filters-form{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.search-filters-form .search-filters-form-options{
+    display: flex;
+    flex-direction: column;
+}
+
+.search-filters-form-options{
+    background-color: rgba(0, 0, 0, 0.521);
+    border: none;
+    outline: none;
+
+    color: white;
+
+    padding: 10px 13px 10px 13px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 0.5rem;
+
+
+  
+}
+
+
+
+.search-filters-form-options option{
+
+    background-color: rgba(0, 0, 0, 0.641);
+    border: none;
+}
+
+
+
+.search-filters-form-options-input{
+    padding: 11px 12px;
+    margin: 0 0 0 10px;
+
+    background-color: rgba(0, 0, 0, 0.521);
+    color: white;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    
+}

@@ -1,0 +1,182 @@
+
+@keyframes rise-up {
+    from{
+       
+
+        scale: 1.05;
+
+        transform: none;
+    }
+    to{
+        transform: none;
+    }
+
+}
+
+.dashboard{
+    position: relative;
+
+    display: flex;
+    height:100%;
+    width: 100%;
+
+    background-color: transparent;
+}
+
+
+.dashboard-sidepanel{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    z-index: 32;
+
+    
+
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+
+    padding: 0px 30px 0px 30px;
+
+    background-color: black;
+    color: rgb(182, 169, 169);
+
+}
+
+.dashboard-avatar-pic{
+    width: 30vh;
+    height: 30vh;
+}
+.dashboard-avatar-pic-image{
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    margin: -2vh 0 0 0;
+
+   
+}
+
+.dashboard-avatar-username{
+    margin: 10px 0 10px 0;
+    font-size: 1.6vw;
+    font-weight: bold;
+}
+
+
+.dashboard-sidepanel-logout{
+    margin: 20px 0;
+    font-size: 1.2vw;
+}
+
+.dashboard-sidepanel-logout-anchor{
+    color: rgb(182, 169, 169);
+
+}
+.dashboard-sidepanel-logout:hover{
+    animation: rise-up 1000ms 0ms ease-in both;
+
+}
+.dashboard-sidepanel-logout-anchor:hover{
+    color: white;
+}
+
+
+.dashboard-details{
+    flex:4;
+    background-color: transparent;
+
+    margin:0 0 0 40vh ;
+
+    padding: 30px 20px 50px 20px;
+
+    color: white;
+
+}
+
+.user-details{
+    background-color: rgb(46, 46, 46);
+    padding: 20px 25px;
+
+    border-radius: 15px;
+
+    margin: 0px 0px 25px 0px;
+}
+
+.user-details-description-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5vw;
+
+    color: rgb(219, 219, 219);
+}
+.user-details-description{
+    font-size: 1.4vw;
+}
+
+
+.dashboard-books-history{
+    background-color: rgb(46, 46, 46);
+    padding: 20px 25px;
+
+    border-radius: 15px;
+}
+
+.dashboard-books-history-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.5vw;
+
+    margin: 20px 0 30px 0px;
+
+    color: rgb(219, 219, 219);
+
+}
+
+.dashboard-books-history-issued{
+    font-size: 1.2vw;
+}
+
+.dashboard-books-history-issued-bookCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-radius: 10px;
+    
+    background-color: rgba(16, 16, 16, 0.729);
+
+    padding: 10px 0 10px 20px;
+    margin: 0 0 10px 0;
+}
+
+.dashboard-books-history-issued-bookCard-returnButton-button{
+    padding: 10px 20px;
+
+    font-size: 1.2vw;
+
+    border-radius: 20px;
+    border: none;
+
+    background-color: rgb(46, 46, 46);
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.dashboard-books-history-issued-bookCard-returnButton-button:hover{
+    background-color: rgb(61, 61, 61);
+}
+
+.dashboard-books-history-issued-bookCard-returnButton-button:active{
+    background-color: rgb(76, 75, 75);
+   
+}
