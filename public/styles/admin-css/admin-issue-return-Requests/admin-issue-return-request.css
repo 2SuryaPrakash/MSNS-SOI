@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Ailerons';
+  src: url('../font-styles/Ailerons-Typeface.otf');
+}
+
+
+.admin-issue-requests{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2em;
+  
+}
+
+.admin-issue-requests-container{  
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 2em;
+  width: 80%;
+  margin:0 auto;
+  margin-top:20px;
+
+  background-color: #ddd9d96d;
+  background-color: purple;
+
+  color: white;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.admin-issue-requests-title {
+  text-align: center;
+  font-family: Ailerons;
+
+  font-size: 2.5em; 
+  padding: 1.1rem;
+
+  color: white;
+
+  background-color: transparent;
+}
+
+
+
+.content {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.book-list {
+  list-style-type: none;
+  padding: 20px;
+  width: 100%;
+}
+
+.book-item {
+  padding: 10px;
+  border: 1px solid #444;
+  margin-bottom: 10px;
+  background-color: #333;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-item .user {
+  font-weight: bold;
+}
+
+.book-item .book {
+  margin-left: 20px;
+}
+
+.book-item .date{
+  margin-left: 20px;
+}

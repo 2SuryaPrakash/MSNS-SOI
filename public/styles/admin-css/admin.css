@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../font-styles/Ailerons-Typeface.otf');
+}
+
+
+.admin-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px;
+
+    margin: 10px 0px;
+
+    background-color: rgb(0, 0, 0);
+
+    color: white;
+
+    background: radial-gradient(
+      circle,
+      rgba(65, 65, 65, 0.644),
+      #171717 30%,
+      rgba(43, 43, 43, 0.775) 40%
+    )
+    
+   
+}
+
+.admin-page-identifier{
+    position: absolute;
+    top:-70px;
+}
+
+.admin-page-title{
+    font-family: 'Ailerons','caveat';
+    font-size: 55px;
+
+    padding: 30px 0 0 0;
+
+    margin: 25px 0 20px 0;
+
+    color: rgb(247, 245, 245);
+
+}
+
+.admin-page-content{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 40px;
+
+
+    background-color: transparent;
+}
+
+.admin-page-content-button{
+    background-color: rgba(22, 22, 22, 0.675);
+
+    color: rgb(182, 169, 169);
+
+    text-align: center;
+
+    border: none;
+    margin: 10px;
+
+    padding:50px ;
+
+    width: 35vw;
+    height: 30vh;
+
+    font-family: 'ruda';
+    font-size: 15px;
+    font-weight: bold;
+
+    border-radius: 2em;
+}
+
+.admin-page-content-button:hover{
+    background: rgb(0,0,0,0.4);
+
+    color: white;
+}
+
+.admin-page-content-button:active{
+    background: rgba(0, 0, 0, 0.61);
+
+    color: white;
+}
+
+
+
+
+

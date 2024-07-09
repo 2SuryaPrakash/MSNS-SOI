@@ -62,9 +62,11 @@ router.post('/login',async (req, res) => {
       else{
         const accessToken=jwt.sign(req.body.username,process.env.ACCESS_TOKEN_SECRET);
         req.session.accessToken=accessToken;
-        
-        res.render('layouts/post-login',{welcomeUser:user.name});
-
+        if(req.body.username=='admin'){
+          res.render('layouts/admin',{welcomeUser:'Admin'});  
+        }else{
+          res.render('layouts/post-login',{welcomeUser:user.name});
+        }
       }
     }
 });

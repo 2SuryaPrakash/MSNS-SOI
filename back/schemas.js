@@ -20,7 +20,6 @@ var UserSchema = mongoose.Schema({
 
 // Schema for Books stored in library
 var BookSchema = mongoose.Schema({
-    _id: mongoose.ObjectId,
 	title: String,
     description: String,
     author: String,
@@ -70,4 +69,4 @@ var BorrowerRecord = mongoose.model('BorrowerRecord',
 // var ReturnRecord = mongoose.model('ReturnRecord', 
 // 								ReturnRecordSchema, 'returnrecords');
 
-module.exports = { db, User, Book, BorrowerRecord,Cart};
+module.exports = { db, User, Book, BorrowerRecord,Cart,Issue,Return};

@@ -9,12 +9,18 @@ const bodyParser = require('body-parser');
 const schemas=require('./back/schemas');
 var db=schemas.db;
 const port = 5001;
+
 var authRouter = require('./back/auth');
 var libraryRouter = require('./back/lib');
-var postLoginRouter=require('./back/postlogin')
-var cartRouter=require('./back/cart')
-var borrowRouter=require('./back/borrow')
-const hbs= require('hbs')
+var postLoginRouter=require('./back/postlogin');
+var cartRouter=require('./back/cart');
+var borrowRouter=require('./back/borrow');
+var issueRouter=require('./back/issuerequest');
+var returnRouter=require('./back/returnrequest');
+var adminRouter=require('./back/admin');
+
+
+const hbs= require('hbs');
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname+'/views/partials');
@@ -38,6 +44,7 @@ app.use(session({
 }));
 // mongoose.connect('mongodb+srv://admin:Nihar365@lib-management-sys.05ochgu.mongodb.net/?retryWrites=true&w=majority&appName=Lib-management-sys')
 // configuring bodyParser
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
 	extended: false
@@ -48,6 +55,10 @@ app.use('/', libraryRouter);
 app.use('/',postLoginRouter);
 app.use('/',cartRouter);
 app.use('/',borrowRouter);
+app.use('/',issueRouter);
+app.use('/',returnRouter);
+app.use('/',adminRouter);
+
 
 app.use((err, req, res, next) => {
 	console.error(err.stack);

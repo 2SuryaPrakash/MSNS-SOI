@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ADMIN</title>
+
+        <!--CSS FILES-->
+
+        <link rel="stylesheet" href="/styles/admin-css/general.css">
+        <link rel="stylesheet" href="/styles/admin-css/header.css">
+        <link rel="stylesheet" href="/styles/admin-css/landing-page.css">
+        <link rel="stylesheet" href="/styles/admin-css/admin.css">
+
+        <!--JS FILES-->
+
+        <!--ADDITIONAL IMPORTED FONT FILES-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400..700&family=Julee&family=Lora:ital,wght@0,400..700;1,400..700&family=Marck+Script&family=Playwrite+NG+Modern:wght@100..400&family=Quintessential&family=Righteous&family=Ruda:wght@400..900&family=Tangerine:wght@400;700&family=Trochut:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Felipa&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap" rel="stylesheet">
+
+        <!--ADDITIONALLY IMPORTED ICONS FILES-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+
+
+
+
+    </head>
+    
+    <body>
+
+        <!--WINDOW HEADER -->
+        <!--It is Divided into 3 sections - the left header, the mid header (under development) , the right header-->
+        <div class="window-header">
+           
+            <div class="left-header" >
+                <nav class="nav-left-header">
+                    <a class="nav-links" href="#Admin-page">
+                        <div class="logo">
+                            <img src="/styles/Logo & Images/M.S.N.S.png" alt="" class="logo-image">
+                        </div>
+                    </a>
+                </nav>
+            </div>
+            <div class="mid-header">
+
+            </div>
+            <div class="right-header">
+                <nav class="nav-right-header">
+                    <div class="header-navigation">
+                        <a class="nav-links" href="#Admin-page">Admin</a>
+                    </div>
+
+                    <div class="header-navigation">
+                        <a class="nav-links" href="http://localhost:5001/logout">Sign-out</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+
+        <!--LANDING PAGE-->
+
+        <div class="landing-pageBG">
+            <div class="landing-page">
+                <div class="left">
+
+
+                    <div class="word1">
+                        <p class="word">Managing &nbsp; </p>
+                    </div>
+                    <div class="word2">                    
+                        <p class="word">Shelves</p>  
+                    </div>
+                
+                    
+                </div>
+               
+                <div class="right">
+
+                    <div class="word1">
+                        <p class="word">Navigating &#160;</p>
+                    </div>
+                    <div class="word2">
+                        <p class="word"> Stories</p>
+                    </div>
+                    
+            
+                </div>
+
+            </div>  
+            <div class="post-login-landing-page-active">
+                <div class="welcome-user">Wecome back {{welcomeUser}}!</div>
+            </div>  
+        </div>
+
+
+        <!--ADMIN PAGE-->
+        
+        <div class="admin-page"  id="Admin-page">
+            <div class="admin-page-identifier" ></div>
+            <div class="admin-page-title">
+                Admin
+            </div>
+
+            <div class="admin-page-content">
+                <a href="http://localhost:5001/admin/addbook">
+                    <button class="admin-page-content-button">
+                        Add a book
+                    </button>
+                </a>
+                
+                
+                <button class="admin-page-content-button">
+                    Update book
+                </button>
+
+                <button class="admin-page-content-button">
+                    Pending Issue Requests
+                </button>
+                
+                <button class="admin-page-content-button">
+                    Pending Return Requests
+                </button>
+
+                <button class="admin-page-content-button">
+                    Student Data
+                </button>
+            </div>
+        </div>
+
+
+        
+
+    
+    </body>
+</html>
