@@ -12,6 +12,8 @@ const port = 5001;
 var authRouter = require('./back/auth');
 var libraryRouter = require('./back/lib');
 var postLoginRouter=require('./back/postlogin')
+var cartRouter=require('./back/cart')
+var borrowRouter=require('./back/borrow')
 const hbs= require('hbs')
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','hbs');
@@ -24,6 +26,7 @@ app.use(session({
 	secret: '~fC4%qZ2j*b!_K',
 	resave: false,
 	saveUninitialized: true,
+	// cookie: { maxAge: 3600000 },
 	store: MongoStore.create({
 		client: db.getClient(),
 		dbName: 'test',
@@ -43,6 +46,9 @@ app.use(bodyParser.urlencoded({
 app.use('/', authRouter);
 app.use('/', libraryRouter);
 app.use('/',postLoginRouter);
+app.use('/',cartRouter);
+app.use('/',borrowRouter);
+
 app.use((err, req, res, next) => {
 	console.error(err.stack);
 	res.status(500).send('Internal Server Error');

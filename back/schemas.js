@@ -20,37 +20,54 @@ var UserSchema = mongoose.Schema({
 
 // Schema for Books stored in library
 var BookSchema = mongoose.Schema({
-    title: String,
+    _id: mongoose.ObjectId,
+	title: String,
     description: String,
     author: String,
     genre: String,
     department: String,
+	count:Number,
 	available: { type: Boolean, default: true }
 }, { timestamps: true })
 
 // Schema for borrowed records of each user
-var borrowerRecordSchema = mongoose.Schema({
-	username: String,
-	bookid: [{ type: mongoose.ObjectId, unique: true, ref: 'Book' }],// array of book ids
-	duedate: [{														// array of duedates
+var bookAndDueDateSchema=mongoose.Schema({
+	bookid:{ type: mongoose.ObjectId, unique: true, ref: 'Book' },
+	duedate:{														// array of duedates
 		type: Date,
 		default: () => new Date(+new Date() + 20 * 24 * 60 * 60 * 1000),//You can borrow for 20 days 
-		required: 'Must Have DueDate'
-	}]
+		
+	}
+});
+var borrowerRecordSchema = mongoose.Schema({
+	username: String,
+	borrowed: [bookAndDueDateSchema]
 }, { timestamps: true })
+var cartSchema = mongoose.Schema({
+	username: String,
+	bookid: [{ type: mongoose.ObjectId, unique: true, ref: 'Book' }],// array of book ids
 
-// var ReturnRecordSchema = mongoose.Schema({
-// 	username: String,
-// 	bookid: { type: mongoose.ObjectId, unique: true, ref: 'Book' },
-// 	duedate: { type: Date, ref: 'BorrowerRecord' },
-// 	fine: Number
-// }, { timestamps: true })
+}, { timestamps: true })
+var pendingIssueSchema = mongoose.Schema({
+	username: String,
+	bookid: [{ type: mongoose.ObjectId, unique: true, ref: 'Book' }],// array of book ids
+
+}, { timestamps: true })
+var pendingReturnSchema = mongoose.Schema({
+	username: String,
+	bookid: [{ type: mongoose.ObjectId, unique: true, ref: 'Book' }],// array of book ids
+
+},  { timestamps: true })
+
 
 var User = mongoose.model('User', UserSchema, 'user');
 var Book = mongoose.model('Book', BookSchema, 'books');
+var Cart= mongoose.model('Cart',cartSchema,'cart')
+var Issue=mongoose.model('Issue',pendingIssueSchema,'issue');
+var Return=mongoose.model('Return',pendingReturnSchema,'return')
 var BorrowerRecord = mongoose.model('BorrowerRecord', 
 									borrowerRecordSchema, 'borrowers');
 // var ReturnRecord = mongoose.model('ReturnRecord', 
 // 								ReturnRecordSchema, 'returnrecords');
 
-module.exports = { db, User, Book, BorrowerRecord};
+module.exports = { db, User, Book, BorrowerRecord,Cart};

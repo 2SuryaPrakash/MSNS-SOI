@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="styles/search-css/general.css">
         <link rel="stylesheet" href="styles/search-css/header.css">
         <link rel="stylesheet" href="styles/search-css/search.css">
+        <link rel="stylesheet" href="styles/search-css/cart-panel.css">
       
 
         <!--JS FILES-->
@@ -31,7 +32,10 @@
         <!--ADDITIONALLY IMPORTED ICONS FILES-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 
-
+        <script src="scripts/genrerecommendation.js" defer></script>
+        <script src="scripts/deptrecommendation.js" defer></script>
+        <script src="scripts/cartitemsrender.js" defer></script>
+        <script src="scripts/cartissue.js" defer></script>
 
 
 
@@ -59,19 +63,16 @@
             <div class="right-header">
                 <nav class="nav-right-header">
                     <div class="header-navigation">
-                        <a class="nav-links" href="./post-login.html#Explore">Explore</a>
-                    </div>
-                    <div class="header-navigation">
-                        <a  class="nav-links" href="./post-login.html#contact">Contact</a>
+                        <a  class="nav-links" href="http://localhost:5001/home">Home</a>
                     </div>
                     <div class="header-navigation">
                         <div class="profile-navigation">
                             <button class="profile-btn" >&#9776; Profile</button>
                             <nav class="post-login-navigation">
-                                <a href="./Dashboard.html" class="post-login-navigation-collapsible-panel">
+                                <a href="http://localhost:5001/dashboard" class="post-login-navigation-collapsible-panel">
                                     Dashboard
                                 </a>
-                                <a href="./index.html" class="post-login-navigation-collapsible-panel">
+                                <a href="http://localhost:5001/logout" class="post-login-navigation-collapsible-panel">
                                     sign-out
                                 </a>
                             </nav>     
@@ -81,98 +82,149 @@
             </div>
         </div>
 
+        <div class="access-cart-button">
+            <button onclick="openNavigationpanel()">
+                <i class="fa fa-shopping-cart"></i>
+            </button>
 
-        <div class="search">
-            <div class="search-searchbar">
+            <div class="access-cart-button-count">
+                0
+            </div>
+        </div>
+
+        <div class="addToCart-book-snackbar" id="addToCart-book-snackbar">
+            <span>Book Name</span>
+            &nbsp;is added to the cart.
+        </div>
+
+        <div class="currentusername" hidden>{{currentusername}}</div>
+        <div class="search-cart-display" id="search-cart-display">
+            <div class="search-cart-display-close">
+                <p onclick="closeNavigationpanel()">&times;</p> <!--Click to close popup-->
+            </div>
+            <div class="search-cart-display-title">
+                Cart
+            </div>
+            
+            <div class="search-cart-display-bookDisplay">
+               {{!-- Cart render location --}}
                 
-                <input type="text" placeholder="Search" class="search-searchbar-input">
             </div>
 
+
+            <div class="search-cart-display-checkout">
+                <button class="search-cart-display-checkout-button">Issue</button>
+            </div>
+        </div>
+
+
+
+        <div class="search" id="search">
+            
+
             <div class="search-filters">
-                <form action="search-filters-form">
+                <form action="http://localhost:5001/search" method="post">
+                    <div class="search-searchbar">
+                        <input name="query" type="text" placeholder="Search" class="search-searchbar-input">
+                        {{!-- <button type="button" onclick="http://localhost:5001/ultra" class="search-filters-form-options-input">Search</button> --}}
+                        
+                        <button type="submit"  class="search-filters-form-options-input">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                                <path fill="#616161" d="M34.6 28.1H38.6V45.1H34.6z" transform="rotate(-45.001 36.586 36.587)"></path>
+                                <path fill="#616161" d="M20 4A16 16 0 1 0 20 36A16 16 0 1 0 20 4Z"></path>
+                                <path fill="#37474F" d="M36.2 32.1H40.2V44.400000000000006H36.2z" transform="rotate(-45.001 38.24 38.24)"></path>
+                                <path fill="#64B5F6" d="M20 7A13 13 0 1 0 20 33A13 13 0 1 0 20 7Z"></path>
+                                <path fill="#BBDEFB" d="M26.9,14.2c-1.7-2-4.2-3.2-6.9-3.2s-5.2,1.2-6.9,3.2c-0.4,0.4-0.3,1.1,0.1,1.4c0.4,0.4,1.1,0.3,1.4-0.1C16,13.9,17.9,13,20,13s4,0.9,5.4,2.5c0.2,0.2,0.5,0.4,0.8,0.4c0.2,0,0.5-0.1,0.6-0.2C27.2,15.3,27.2,14.6,26.9,14.2z"></path>
+                            </svg>
+                        </button>
+                        
+
+                    </div>
+                    <label for="sort">Sort : </label>
                     <select name="sort" id="sort" class="search-filters-form-options">
-                        <option value="" selected="selected">Ascending</option>
-                        <option value="" selected="selected">Descending</option>
-                        <option value="" selected="selected">Sort</option>
+                        <option value="1" >Ascending</option>
+                        <option value="-1" {{sortState}}>Descending</option>
+                    </select>
+                    
+            
+                    <label for="dept">Department : </label>
+                    <input type="text" list="depts" id="dept" name="department" placeholder="Enter Department" class="search-filters-form-options" {{deptState}}>
+                    <datalist id="depts"></datalist>
+
+                    <label for="genre">Genre : </label>
+                    <input type="text" list="genres" id="genre" name="genre" placeholder="Enter Genre" class="search-filters-form-options" {{genreState}}>
+                    <datalist id="genres"></datalist>
+
+                    <label for="searchby">Search By : </label>
+                    <select name="searchby" id="searchby" class="search-filters-form-options">
+                        <option value="title" >Title</option>
+                        <option value="author" {{searchbyState}} >Author</option>
                     </select>
 
-                    <select name="Subject" id="Subject" class="search-filters-form-options">
-                        <option value="" selected="selected">Engineering Physics</option>
-                        <option value="" selected="selected">Chemical Engineering</option>
-                        <option value="" selected="selected">Civil Engineering</option>
-                        <option value="" selected="selected" >Electrical Engineering</option>
-                        <option value="" selected="selected" >Mechanical Engineering</option>
-                        <option value="" selected="selected">Computer Science</option>
-                        <option value="" selected="selected">Subject</option>
-                    </select>
 
-                    <select name="Subject" id="Subject" class="search-filters-form-options">
-                        <option value="" selected="selected">Genre</option>
-                    </select>
-
-
-
-                    <input type="submit" value="Submit" class="search-filters-form-options-input">
                 </form>
             </div>
             <div class="search-bookDisplay">
-                <div class="search-bookDisplay-card">
+                {{#if cellsData}}
+                    {{#each cellsData}}
+                        {{> bookCell data=this}}
+                    {{/each}}
+                    {{else}}
+                    Oops ! It appears that we cant find what you're looking for :-(
+                {{/if}}
+                <script defer> 
+                    const cartButtons=document.querySelectorAll('.add-to-cart')
+                    
+                    cartButtons.forEach((x)=>{
+                        x.addEventListener('click',()=>{
+                            createBookCellNew(x.classList[1])
+                            let snackbar=document.getElementById('addToCart-book-snackbar');
+                            
+                            snackbar.className='showSnackbar';
 
-                    <div class="search-bookDisplay-card-inner">
+                            setTimeout(()=>{
+                                snackbar.className=snackbar.className.replace('showSnackbar','');
+                            },3000);
 
-                        <div class="search-bookDisplay-card-front">
-                            <div class="search-bookDisplay-card-image-div">
-                                <img src="styles/Logo & Images/cs.jpg" alt="" class="search-bookDisplay-card-image">
-                            </div>
-                            <div class="search-bookDisplay-card-title">
-                                Introduction to Algorithms
-                            </div>
-                            <div class="search-bookDisplay-card-author">
-                                Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
-                            </div>      
-                        </div>
-    
-                        <div class="search-bookDisplay-card-back">
-                            <div class="search-bookDisplay-card-back-author">
-                                <strong class="card-title">Author : </strong>
-                                <p>
-                                    Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
-                                </p>
-                            </div>
-                            <div class="search-bookDisplay-card-back-description">
-                                <strong class="card-title">Description : </strong>
-                                <p>
-                                    Comprehensive guide to algorithms with detailed explanations.
-                                </p>
-                            </div>
-                            <div class="search-bookDisplay-card-back-genre">
-                                <strong class="card-title">Genre : </strong>
-                                <p>
-                                    Algorithms
-                                </p>
-                            </div>
-                            <div class="search-bookDisplay-card-back-count">
-                                <strong class="card-title">Count : </strong>
-                                <p>9</p>
-                            </div>
+                        });
+                    });
 
-                            <div class="search-bookDisplay-card-back-issue">
-                                <button class="search-bookDisplay-card-back-issue-button">
-                                    ISSUE
-                                </button>
-                            </div>
-
-
-                        </div>
-    
-                    </div>  
-
-                </div>
+                </script>
             </div>
         </div>
 
         
+    <script>
 
+        const openNavigationpanel=()=>{
+            document.querySelector('.search-cart-display').style.width="270px";
+            document.querySelector('.search-cart-display').style.zIndex="32";
+            document.querySelector('.search-cart-display').style.opacity="1";
+            document.querySelector('.search').style.marginLeft="270px";
+
+
+            document.querySelector('.search-bookDisplay').style.width="72vw"
+
+
+        }
+
+        const closeNavigationpanel=()=>{
+            document.querySelector('.search-cart-display').style.width="0px";
+            document.querySelector('.search').style.marginLeft="0px";
+            document.querySelector('.search-cart-display').style.opacity="0";
+            document.querySelector('.search-cart-display').style.zIndex="-1";
+
+            document.querySelector('.search-bookDisplay').style.width="90vw"
+
+
+
+
+
+
+
+        }
+
+    </script>
         
     </body>
     

@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="styles/about-page.css">
     <link rel="stylesheet" href="styles/button.css">
     <link rel="stylesheet" href="styles/contact_page.css">
+   
+    <style>
+        .logo{
+                width: 5.5vw;
+    
+        }
+
+        .logo-image{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,12 +104,12 @@
             
     {{/if}}
     
-    {{!-- <div class="window-header">
+    <div class="window-header">
            
         <div class="left-header" >
             <nav class="nav-left-header">
                 <div class="logo">
-                    <a class="nav-links" href="#">LOGO?</a>
+                    <a class="nav-links" href="http://localhost:5001/"><img src="styles/Logo & Images/M.S.N.S.png" alt="" class="logo-image"></a>
                 </div>
             </nav>
         </div>
@@ -107,22 +119,16 @@
         <div class="right-header">
             <nav class="nav-right-header">
                 <div class="header-navigation">
-                    <a class="nav-links" href="#">Explore</a>
+                    <a  class="nav-links" href="http://localhost:5001/">Home</a>
                 </div>
                 <div class="header-navigation">
-                    <a class="nav-links" href="#About-Page">About</a>
-                </div>
-                <div class="header-navigation">
-                    <a  class="nav-links" href="#contact">Contact</a>
-                </div>
-                <div class="header-navigation">
-                    <a id="headerLogin" class="login-btn" href="http://localhost:5001/welcome">Login</button>
+                    <a id="headerLogin" class="login-btn" href="http://localhost:5001/welcome">Login</a>
                 </div>
                 
                 
             </nav>
         </div>
-    </div> --}}
+    </div>
 
     <div class="container {{containerState}}" id="container">
         <div class="form-container sign-up">

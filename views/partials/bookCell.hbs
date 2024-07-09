@@ -1,0 +1,62 @@
+ 
+<div class="search-bookDisplay-card">
+
+    <div class="search-bookDisplay-card-inner">
+        <div class="search-bookDisplay-card-front">
+            <div class="search-bookDisplay-card-image-div">
+                <img src="styles/Logo & Images/cs.jpg" alt="" class="search-bookDisplay-card-image">
+            </div>
+
+            <div class="search-bookDisplay-card-title">
+                {{data.title}}
+            </div>
+            <div class="search-bookDisplay-card-author">
+                {{data.author}}
+            </div>      
+        </div>
+
+        <div class="search-bookDisplay-card-back">
+            <div class="search-bookDisplay-card-back-content">
+                <div class="search-bookDisplay-card-back-author">
+                <strong class="card-title">Author : </strong>
+                <p>
+                    {{data.author}}
+                </p>
+                </div>
+
+                <div class="search-bookDisplay-card-back-description">
+                    <strong class="card-title">Description : </strong>
+                    <p>
+                        {{data.description}}
+                    </p>
+                </div>
+                <div class="search-bookDisplay-card-back-genre">
+                    <strong class="card-title">Genre : </strong>
+                    <p>
+                        {{data.genre}}
+                    </p>
+                </div>
+                <div class="search-bookDisplay-card-back-count">
+                    <strong class="card-title">Count : </strong>
+                    <p>{{data.count}}</p>
+                </div>
+            </div>   
+            
+
+            <div class="search-bookDisplay-card-back-issue">
+                <button class="search-bookDisplay-card-back-issue-button {{data.id}} issue">
+                    Issue
+                </button>
+                <div hidden>{{data.id}}</div>
+
+                <button class="search-bookDisplay-card-back-issue-button {{data.id}} add-to-cart">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+
+    </div>  
+    
+
+</div>
