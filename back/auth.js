@@ -2,7 +2,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const express = require('express');
 var router = express.Router();
-var {User,Cart,BorrowerRecord} = require('./schemas');
+var {User,Cart,BorrowerRecord,Issue,Return} = require('./schemas');
 const bodyParser = require('body-parser');
 const mongoose=require('mongoose')
 const bcrypt=require('bcrypt');
@@ -37,6 +37,8 @@ router.post('/signup', async (req, res) => {
         else{
           req.body.password=await bcrypt.hash(req.body.password,10);
           await Cart.create({username:req.body.username,bookid:[]});
+          await Issue.create({username:req.body.username,bookid:[]});
+          await Return.create({username:req.body.username,bookid:[]});
           await BorrowerRecord.create({username:req.body.username,borrowed:[]});
           await User.create(req.body).then((user) => {
           console.log(user.username + " saved to user collection.");
