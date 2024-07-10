@@ -42,4 +42,54 @@ router.post('/admin/addbook',async (req,res)=>{
 
     }
 });
+
+router.get('/admin/updatebook',async (req,res)=>{  
+    let data=await Book.find({});
+    res.render('layouts/admin-updateBook',{cellsData:data});
+});
+
+router.get('/admin/issuebook',(req,res)=>{
+    res.render('layouts/admin-issueRequests');
+});
+
+router.get('/admin/returnbook',(req,res)=>{
+    res.render('layouts/admin-returnRequests');
+});
+
+router.get('/admin/studentdata',(req,res)=>{
+    res.render('layouts/admin-studentData');
+});
+
+router.post('/admin/search',authenticateUser,async (req,res)=>{
+    let query={};
+    let sort=null;
+    let sortby='';
+    
+        // const escapedInput = req.body.query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if(req.body.query){
+        if(req.body.searchby=="title"){
+        query.title={$regex: req.body.query,$options:'i'}
+        sortby='title';
+        }
+        else{
+            query.author={$regex: req.body.query,$options:'i'}
+            sortby='author';
+        }
+    }
+    if(req.body.sort==1){
+        sort=1;
+    }else{
+        sort=-1;
+    }
+    if(req.body.department){
+        query.department=req.body.department
+    }
+    if(req.body.genre){
+        query.genre=req.body.genre
+    }
+    let data =await Book.find(query).sort({title:sort});
+    res.render('layouts/admin-updateBook',{cellsData:data,currentusername:req.user.username,sortState:sort==1?'':'selected',deptState:req.body.department?`value="${req.body.department}"`:'',genreState:req.body.genre?`value="${req.body.genre}"`:'',searchbyState:sortby=='title' ? 'selected':''});
+    //fix it so that it keeps values in the form even if you rerender
+    
+});
 module.exports=router;

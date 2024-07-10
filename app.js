@@ -24,7 +24,9 @@ const hbs= require('hbs');
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname+'/views/partials');
-
+hbs.registerHelper('isAvailable', function(value) {
+	return value!=0;
+  });
 
 app.use(express.static("./public"));
 // configuring session

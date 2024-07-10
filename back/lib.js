@@ -54,7 +54,14 @@ router.get("/getbooks/getuniquedept",authenticateUser,async (req,res)=>{
     res.send(data);
 }); 
 
-
+router.get('/deletebook/:id',authenticateUser,async(req,res)=>{
+    if(req.user.username=='admin'){
+        await Book.findByIdAndDelete(req.params.id);
+        res.send('');
+    }else{
+        res.render('layouts/login-signup-page',{invalidLogin:true});
+    }
+});
 
 module.exports = router;
 
