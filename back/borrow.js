@@ -17,11 +17,12 @@ router.post('/borrow/:username',async (req,res)=>{
         for(book of req.body.books){
             try{
                 await BorrowerRecord.findOneAndUpdate({username:req.params.username},{ $push: { borrowed:{bookid:book}  } });
+                await Book.findByIdAndUpdate(book,{$inc: { count: -1 }});
             }
             catch{
                 console.log('error in inserting')
             }
-        }
+        }     
         
     }
     console.log(req.body.books)

@@ -31,7 +31,7 @@ var BookSchema = mongoose.Schema({
 
 // Schema for borrowed records of each user
 var bookAndDueDateSchema=mongoose.Schema({
-	bookid:{ type: mongoose.ObjectId, unique: true, ref: 'Book' },
+	bookid:{ type: mongoose.ObjectId},
 	duedate:{														// array of duedates
 		type: Date,
 		default: () => new Date(+new Date() + 20 * 24 * 60 * 60 * 1000),//You can borrow for 20 days 
@@ -44,17 +44,17 @@ var borrowerRecordSchema = mongoose.Schema({
 }, { timestamps: true })
 var cartSchema = mongoose.Schema({
 	username: String,
-	bookid: [{ type: mongoose.ObjectId, unique: true, ref: 'Book' }],// array of book ids
+	bookid: [{ type: mongoose.ObjectId }],// array of book ids
 
 }, { timestamps: true })
 var pendingIssueSchema = mongoose.Schema({
 	username: String,
-	bookid: [{ type: mongoose.ObjectId, unique: true, ref: 'Book' }],// array of book ids
+	bookid: [{ type: mongoose.ObjectId  }],// array of book ids
 
 }, { timestamps: true })
 var pendingReturnSchema = mongoose.Schema({
 	username: String,
-	bookid: [{ type: mongoose.ObjectId, unique: true, ref: 'Book' }],// array of book ids
+	bookid: [{ type: mongoose.ObjectId}],// array of book ids
 
 },  { timestamps: true })
 

@@ -8,8 +8,11 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({
 	extended: false
 }))
-
-router.get('issue/:username',async(req,res)=>{
+router.get('/issue',async(req,res)=>{
+    let data=await Issue.find({bookid: {$ne: []}});
+    res.send(data);
+});
+router.get('/issue/:username',async(req,res)=>{
     let data=await Issue.find({username:req.params.username});
     res.send(data);
 });
@@ -24,7 +27,7 @@ router.post('/issue/:username',async (req,res)=>{
             }
         }
         
-    }
+    }  
     res.send(req.body.id);
 });
 router.post('/issue/delete/:username',async (req,res)=>{

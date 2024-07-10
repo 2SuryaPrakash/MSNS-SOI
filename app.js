@@ -57,9 +57,9 @@ app.use('/', libraryRouter);
 app.use('/',postLoginRouter);
 app.use('/',cartRouter);
 app.use('/',borrowRouter);
+app.use('/',adminRouter);
 app.use('/',issueRouter);
 app.use('/',returnRouter);
-app.use('/',adminRouter);
 
 
 app.use((err, req, res, next) => {

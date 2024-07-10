@@ -9,9 +9,12 @@
 
         <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook/general.css">
         <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook/header.css">
-        <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook/admin-updateBook.css">
+        {{!-- <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook/admin-updateBook.css"> --}}
         <link rel="stylesheet" href="/styles/search-css/search.css">
         <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook/update-book.css">
+        <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook-update-a-bookpage/general.css">
+        <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook-update-a-bookpage/header.css">
+        <link rel="stylesheet" href="/styles/admin-css/admin-UpdateBook-update-a-bookpage/update-page.css">
 
 
         <!--JS FILES-->
@@ -153,6 +156,55 @@
 
                         
             </div>
+        </div>
+        <div class="admin-addbook-blur-overlay" id="admin-addbook-blur-overlay"></div>
+
+        <div class="admin-addbook" id="admin-addbook">
+
+            <div class="admin-addbook-display-close">
+                <p onclick="closeUpdateBookPopUpOverlay()">&times;</p> <!--Click to close popup-->
+            </div>
+
+            <div class="admin-addbook-title">
+                Update a book
+            </div>
+
+            <div class="admin-updateBook-nowupdating">
+                Now Updating :&nbsp;<span>Book Name</span>
+            </div>
+            
+            <form action="" class="admin-addbook-form">
+                <div class="admin-addbook-form-inputDiv">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Title" class="admin-addbook-form-inputDiv-title">
+                </div>
+
+                <div class="admin-addbook-form-inputDiv">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="Description" class="admin-addbook-form-inputDiv-description">                    
+                </div>
+
+                <div class="admin-addbook-form-inputDiv">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Author" class="admin-addbook-form-inputDiv-author">                    
+                </div>
+
+                <div class="admin-addbook-form-inputDiv">
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" placeholder="Genre" class="admin-addbook-form-inputDiv-genre">                      
+                </div>
+
+                <div class="admin-addbook-form-inputDiv">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" placeholder="Department" class="admin-addbook-form-inputDiv-department">                      
+                </div>
+
+
+                <div class="admin-addbook-buttons">
+                    <button>Reset</button>
+                    <button>Update</button>
+                </div>
+            </form>
         </div>
 
 

@@ -4,14 +4,71 @@
 }
 
 
+.admin-addbook-blur-overlay{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+
+    height: 0;
+
+    background-color: rgba(0, 0, 0, 0.879);
+    filter: blur(100em),brightness(10px);
+    -webkit-filter: blur(8px);
+
+    visibility: hidden;
+
+    transition: 0.5s;
+}
+
+.admin-addbook-display-close{
+    position: absolute;
+    top:10px;
+    right: 3em;
+
+    color: white;
+
+    font-size: 2em;
+
+    cursor: pointer;
+
+}
+
+.admin-addbook-display-close:hover{
+    color: rgb(197, 196, 196);
+}
+.admin-addbook-display-close:active{
+    color: rgb(108, 107, 107);
+}
+
+
 .admin-addbook{
+    position: fixed;
+    top:30px;
+    left:0;
+    right:0px;
+    bottom: 0;
+
+    height: 0;
+
+
+
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 1em;
-    background-color: transparent;
+    padding: 0.1em;
+    background-color: rgba(17, 17, 17, 0.255);
+    
+
+    visibility: hidden;
+
+
+    transition: 0.5s;
+
 }
 
 .admin-addbook-title{
@@ -26,9 +83,28 @@
 
     background-color: transparent;
 
+    
+
     color: white;
 
     padding: 0.5em;
+}
+
+.admin-updateBook-nowupdating{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    color: rgb(197, 196, 196);
+
+    font-family: Arima;
+    font-weight: 500;
+
+    padding: 0.7em;
+
+    font-size: 1.3em;
 }
 
 .admin-addbook-form{
@@ -41,7 +117,30 @@
 
     padding: 1em 1em;
 
+
+    height:18em;
+
+    overflow-y:auto;
+    overflow-x: hidden;
+
 }
+
+.admin-addbook-form::-webkit-scrollbar{
+    width: 10px;
+}
+
+.admin-addbook-form::-webkit-scrollbar-track{
+    background-color: rgba(255, 255, 255, 0.525);
+    border-radius: 10px;
+}
+
+.admin-addbook-form::-webkit-scrollbar-thumb{
+    background-color: rgba(39, 39, 39, 0.508);
+    border-radius: 10px;
+    height: 10px;
+}
+
+
 
 .admin-addbook-form-inputDiv{
     display: flex;
@@ -120,74 +219,6 @@
 
     background-color: rgb(0, 0, 0);
 
-}
-
-
-#add-book-snackbar,#add-book-warning-snackbar{
-    visibility: hidden;
-    position: fixed;
-
-    top:100px;
-    right: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: rgb(224, 224, 224);
-    color: rgb(18, 18, 18);
-
-    border-radius: 1em;
-
-    font-family: 'Arima';
-    font-weight: 500;
-    font-size: 1.3vw;
-
-    padding: 10px;
-
-    z-index: 39;
-}
-
-
-
-@keyframes fade-in{
-    from{
-        top:0;
-        right:0;
-        opacity: 0;
-    }
-
-    to{
-        top:100px;
-        right:10px;
-        opacity: 1;
-    }
-}
-
-@keyframes fade-out{
-    from{
-        top:100px;
-        right:10px;
-        opacity: 1;
-    }
-
-    to{
-        top:0px;
-        right:0px;
-        opacity: 0;
-    }
-}
-
-#add-book-snackbar.showAddBookSnackbar{
-    visibility:visible;
-
-    animation: fade-in 1s,fade-out 1s 2.0s;
-}
-
-#add-book-warning-snackbar.showAddBookWarningSnackbar{
-    visibility:visible;
-
-    animation: fade-in 1s,fade-out 1s 2.0s;
 }
 
 
