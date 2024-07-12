@@ -48,8 +48,30 @@ router.post('/search',authenticateUser,async (req,res)=>{
     //fix it so that it keeps values in the form even if you rerender
     
 });
+router.post('/search/user',async (req,res)=>{
+    if(req.body.type=='name'){
+        if(req.body.query){
+            let data=await User.find({name:{$regex: req.body.query,$options:'i'}});
+            res.send(data);
+        }else{
+            let data=await User.find({});
+            res.send(data);
+        }
+        
+    }else if(req.body.type=='username'){
+        if(req.body.query){
+            let data=await User.find({username:{$regex: req.body.query,$options:'i'}});
+            res.send(data);
+        }else{
+            let data=await User.find({});
+            res.send(data);
+        }  
+    }
+    
+    
+})
 router.get('/dashboard',authenticateUser,(req,res)=>{
-    res.render('layouts/dashboard',{username:req.user.username,name:req.user.name});
+    res.render('layouts/dashboard',{username:req.user.username,name:req.user.name,email:req.user.email});
 });
 
 module.exports=router;

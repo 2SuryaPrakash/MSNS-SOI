@@ -11,13 +11,13 @@ router.use(bodyParser.urlencoded({
 router.get('/issue',async(req,res)=>{
     let data=await Issue.find({bookid: {$ne: []}});
     res.send(data);
-});
+}); 
 router.get('/issue/:username',async(req,res)=>{
-    let data=await Issue.find({username:req.params.username});
+    let data=await Issue.findOne({username:req.params.username});
     res.send(data);
 });
 router.post('/issue/:username',async (req,res)=>{
-    if(req.body.books){
+    if(req.body.books){  
         for(book of req.body.books){
             try{
                 await Issue.findOneAndUpdate({username:req.params.username},{ $push: {bookid:book} });

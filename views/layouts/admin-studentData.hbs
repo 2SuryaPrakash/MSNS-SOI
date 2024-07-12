@@ -34,7 +34,7 @@
         <!--ADDITIONALLY IMPORTED ICONS FILES-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 
-
+        <script src="/scripts/studentdata.js" defer></script>
 
 
 
@@ -78,237 +78,26 @@
             </div>
 
             <div class="admin-student-data-search-student">
-                <input type="text" placeholder="Name of Student" class="admin-student-data-search-student-input">
+                {{!-- <input type="radio" placeholder="Name of Student" class="admin-student-data-search-student-input"> --}}
+                <form class="admin-student-data-search-student-form">
+                    <label for="search">Search by:</label>
+                    <select name="search_type" id="search_type">
+                        <option value="name" selected>Name</option>
+                        <option value="username">Username</option>
+                    </select>
+                    <input type="text" name="search_term" id="search_term" placeholder="Enter search term">
+                    <button type="button">Search</button>
+                </form>
+
             </div>
 
             <div class="admin-student-data-student-details">
-                <div class="admin-student-data-student-details-card">
-                    <div class="admin-student-data-student-details-card-name">
-                        <span>Name</span>
-                    </div>
-                    <div class="admin-student-data-student-details-card-username">
-                        <span>Username</span> 
-                    </div>
-                    <div class="admin-student-data-student-details-card-bookList">
-                        <div class="admin-student-data-student-details-card-bookList-title">
-                            Books Issued
-                        </div>
-                        <div class="admin-student-data-student-details-card-bookList-list">
-                            <p>Book 1</p>
-                            <p>Book 1</p>
+                
+                {{!-- space for student details --}}
 
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="admin-student-data-student-details-card">
-                    <div class="admin-student-data-student-details-card-name">
-                        <span>Name</span>
-                    </div>
-                    <div class="admin-student-data-student-details-card-username">
-                        <span>Username</span> 
-                    </div>
-                    <div class="admin-student-data-student-details-card-bookList">
-                        <div class="admin-student-data-student-details-card-bookList-title">
-                            Books Issued
-                        </div>
-                        <div class="admin-student-data-student-details-card-bookList-list">
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="admin-student-data-student-details-card">
-                    <div class="admin-student-data-student-details-card-name">
-                        <span>Name</span>
-                    </div>
-                    <div class="admin-student-data-student-details-card-username">
-                        <span>Username</span> 
-                    </div>
-                    <div class="admin-student-data-student-details-card-bookList">
-                        <div class="admin-student-data-student-details-card-bookList-title">
-                            Books Issued
-                        </div>
-                        <div class="admin-student-data-student-details-card-bookList-list">
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="admin-student-data-student-details-card">
-                    <div class="admin-student-data-student-details-card-name">
-                        <span>Name</span>
-                    </div>
-                    <div class="admin-student-data-student-details-card-username">
-                        <span>Username</span> 
-                    </div>
-                    <div class="admin-student-data-student-details-card-bookList">
-                        <div class="admin-student-data-student-details-card-bookList-title">
-                            Books Issued
-                        </div>
-                        <div class="admin-student-data-student-details-card-bookList-list">
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="admin-student-data-student-details-card">
-                    <div class="admin-student-data-student-details-card-name">
-                        <span>Name</span>
-                    </div>
-                    <div class="admin-student-data-student-details-card-username">
-                        <span>Username</span> 
-                    </div>
-                    <div class="admin-student-data-student-details-card-bookList">
-                        <div class="admin-student-data-student-details-card-bookList-title">
-                            Books Issued
-                        </div>
-                        <div class="admin-student-data-student-details-card-bookList-list">
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="admin-student-data-student-details-card">
-                    <div class="admin-student-data-student-details-card-name">
-                        <span>Name</span>
-                    </div>
-                    <div class="admin-student-data-student-details-card-username">
-                        <span>Username</span> 
-                    </div>
-                    <div class="admin-student-data-student-details-card-bookList">
-                        <div class="admin-student-data-student-details-card-bookList-title">
-                            Books Issued
-                        </div>
-                        <div class="admin-student-data-student-details-card-bookList-list">
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-                            <p>Book 1</p>
-
-                        </div>
-                    </div>
-                </div>
+                
+                    
+                
 
 
             </div>

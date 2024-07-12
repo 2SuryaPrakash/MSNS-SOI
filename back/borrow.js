@@ -8,9 +8,9 @@ router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({
 	extended: false
 }))
-router.get('borrow/:username',async(req,res)=>{
-    let data=await BorrowerRecord.find({username:req.params.username});
-    res.send(data);
+router.get('/borrow/:username',async(req,res)=>{
+    let data=await BorrowerRecord.findOne({username:req.params.username});
+    res.send(data);   
 });
 router.post('/borrow/:username',async (req,res)=>{
     if(req.body.books){
@@ -28,5 +28,8 @@ router.post('/borrow/:username',async (req,res)=>{
     console.log(req.body.books)
     res.send('');
 });
-
+router.post('/borrow/delete/:username',async (req,res)=>{
+    await BorrowerRecord.updateOne({username: req.params.username},{$pull: {borrowed:{bookid: req.body.id}}});    
+    res.send('');
+});
 module.exports = router;

@@ -1,17 +1,28 @@
-
-@keyframes rise-up {
-    from{
-       
-
-        scale: 1.05;
-
-        transform: none;
-    }
-    to{
-        transform: none;
-    }
-
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../font-styles/Ailerons-Typeface.otf');
 }
+
+
+
+/*@keyframes exit{
+
+    from{
+        opacity: 0.5;
+        scale: 0.8;
+    }
+
+    50%{
+        opacity: 1;
+        scale: 1;
+    }
+    
+    to{
+        scale:0.8;
+        opacity: 0.5;
+        transform: none;
+    }
+}*/
 
 .dashboard{
     position: relative;
@@ -65,14 +76,14 @@
 
 .dashboard-avatar-username{
     margin: 10px 0 10px 0;
-    font-size: 1.6vw;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
 
 .dashboard-sidepanel-logout{
     margin: 20px 0;
-    font-size: 1.2vw;
+    font-size: 0.8em;
 }
 
 .dashboard-sidepanel-logout-anchor{
@@ -94,44 +105,55 @@
 
     margin:0 0 0 40vh ;
 
-    padding: 30px 20px 50px 20px;
+    padding: 2.3em 2em 2em 2em;
 
     color: white;
 
 }
 
+
+/*USER DETAILS*/
+
 .user-details{
     background-color: rgb(46, 46, 46);
-    padding: 20px 25px;
+    padding: 0.1em 2em;
 
-    border-radius: 15px;
+    border-radius: 2em;
 
     margin: 0px 0px 25px 0px;
+
 }
 
 .user-details-description-title{
     text-align: center;
-    font-weight: bold;
-    font-size: 2.5vw;
+    font-family: Ailerons;
+    font-size: 2.5em;
 
     color: rgb(219, 219, 219);
 }
 .user-details-description{
-    font-size: 1.4vw;
+    font-size: 1em;
 }
 
 
+
+/*LIST OF ISSUED BOOKS*/
+
 .dashboard-books-history{
     background-color: rgb(46, 46, 46);
-    padding: 20px 25px;
+    padding: 1em 1.2em;
 
-    border-radius: 15px;
+    border-radius: 2em;
+
+    margin:0.5em 0 1.5em 0;
+
 }
 
 .dashboard-books-history-title{
     text-align: center;
-    font-weight: bold;
-    font-size: 2.5vw;
+    
+    font-size: 2.5em;
+    font-family: Ailerons;
 
     margin: 20px 0 30px 0px;
 
@@ -140,10 +162,14 @@
 }
 
 .dashboard-books-history-issued{
-    font-size: 1.2vw;
+    font-size: 0.8em;
+}
+.dashboard-books-history-issued div{
+    margin: 0.4em 0.2em 0.3em 0.2em;
 }
 
-.dashboard-books-history-issued-bookCard{
+.dashboard-books-history-issued-bookCard,.dashboard-pending-issue-requests-bookList-bookCard{
+
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -156,10 +182,22 @@
     margin: 0 0 10px 0;
 }
 
-.dashboard-books-history-issued-bookCard-returnButton-button{
+.dashboard-books-history-issued-bookCard div{
+    margin: 0.4em 0em 0.3em 0em;
+
+}
+
+@media (max-width:750px) {
+    .dashboard-books-history-issued-bookCard,.dashboard-pending-issue-requests-bookList-bookCard,.dashboard-pending-return-requests-bookList-bookCard{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+.dashboard-books-history-issued-bookCard-returnButton-button,.dashboard-pending-issue-requests-bookCard-cancelButton-button,.dashboard-pending-return-requests-bookCard-cancelButton-button{
     padding: 10px 20px;
 
-    font-size: 1.2vw;
+    font-size: 1em;
 
     border-radius: 20px;
     border: none;
@@ -172,11 +210,120 @@
     transition: 0.4s;
 }
 
-.dashboard-books-history-issued-bookCard-returnButton-button:hover{
+.dashboard-books-history-issued-bookCard-returnButton-button:hover,.dashboard-pending-issue-requests-bookCard-cancelButton-button:hover,.dashboard-pending-return-requests-bookCard-cancelButton-button:hover{
     background-color: rgb(61, 61, 61);
 }
 
-.dashboard-books-history-issued-bookCard-returnButton-button:active{
+.dashboard-books-history-issued-bookCard-returnButton-button:active,.dashboard-pending-issue-requests-bookCard-cancelButton-button:active,.dashboard-pending-return-requests-bookCard-cancelButton-button:active{
     background-color: rgb(76, 75, 75);
    
+}
+
+
+
+
+/*PENDING ISSUE REQUESTS*/
+
+.dashboard-pending-issue-requests{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: rgb(46, 46, 46);
+
+    padding: 1em 1.2em;
+    margin:0.5em 0 1.5em 0;
+
+
+    border-radius: 2em;
+
+
+}
+
+.dashboard-pending-issue-requests-title{
+    font-family: ailerons;
+    font-size:2.5em;
+    color: rgb(219, 219, 219);
+
+    padding: 0.5em;
+
+    text-align: center;
+
+}
+
+.dashboard-pending-issue-requests-bookList{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.dashboard-pending-issue-requests-bookList-bookCard{
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+
+.dashboard-pending-issue-requests-bookList-bookCard div{
+    margin: 0.4em 0.5em 0.3em 0.5em;
+}
+
+
+
+/*PENDING RETURN REQUESTS*/
+
+.dashboard-pending-return-requests{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: rgb(46, 46, 46);
+
+    padding: 1em 1.2em;
+    margin:0.5em 0 1.5em 0;
+
+
+    border-radius: 2em;
+
+}
+
+.dashboard-pending-return-requests-title{
+    font-family: ailerons;
+    font-size:2.5em;
+    color: rgb(219, 219, 219);
+
+    padding: 0.5em;
+
+    text-align: center;
+
+}
+
+.dashboard-pending-return-requests-bookList{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.dashboard-pending-return-requests-bookList-bookCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-radius: 10px;
+    
+    background-color: rgba(16, 16, 16, 0.729);
+
+    padding: 10px 0 10px 20px;
+    margin: 0 0 10px 0;
+
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+
+.dashboard-pending-return-requests-bookList-bookCard div{
+    margin: 0.4em 0.5em 0.3em 0.5em;
 }

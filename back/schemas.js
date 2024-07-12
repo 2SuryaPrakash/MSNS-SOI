@@ -54,7 +54,7 @@ var pendingIssueSchema = mongoose.Schema({
 }, { timestamps: true })
 var pendingReturnSchema = mongoose.Schema({
 	username: String,
-	bookid: [{ type: mongoose.ObjectId}],// array of book ids
+	borrowed: [bookAndDueDateSchema]// array of book ids
 
 },  { timestamps: true })
 

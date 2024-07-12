@@ -43,10 +43,25 @@ router.post('/admin/addbook',async (req,res)=>{
     }
 });
 
+    
 router.get('/admin/updatebook',async (req,res)=>{  
     let data=await Book.find({});
     res.render('layouts/admin-updateBook',{cellsData:data});
 });
+router.post('/admin/updatebook',async (req,res)=>{
+    if(req.body){
+        try{
+            await Book.findByIdAndUpdate(req.body.id,{title:req.body.title,description:req.body.description,author:req.body.author,genre:req.body.genre,department:req.body.department,count:req.body.count});
+            res.send({status:'success'});
+        }catch{
+            res.send({status:'fail'});
+        }
+    }
+    else{
+        res.send({status:'fail'});
+    }
+});
+
 
 router.get('/admin/issuebook',(req,res)=>{
     res.render('layouts/admin-issueRequests');

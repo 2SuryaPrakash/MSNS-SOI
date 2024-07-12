@@ -1,11 +1,5 @@
 const issuedBooksList = document.getElementById('issuedBooks');
 
-// [
-//   { title: ['Book Title 1','book2','book3'], user: 'User A', date: '01-07-2024' },
-//   { title: ['Book Title 2'], user: 'User B', date: '02-07-2024' },
-//   { title: ['Book Title 3'], user: 'User C', date: '03-07-2024' }
-// ];
-
 async function createBookEntry(user) {
   const li = document.createElement('li');
   li.className = 'book-item';
@@ -15,8 +9,8 @@ async function createBookEntry(user) {
   userDiv.textContent = `User: ${user.username}`;
   li.appendChild(userDiv);
 
-  for(x of user.bookid){
-    fetch('http://localhost:5001/getbook/'+`${x}`).then((res)=>{return res.json()}).then((book)=>{
+  for(let x of user.bookid){  
+    await fetch('http://localhost:5001/getbook/'+`${x}`).then((res)=>{return res.json()}).then((book)=>{
       const book_details=document.createElement('div');
       book_details.className='book-content';
 
@@ -54,6 +48,7 @@ async function createBookEntry(user) {
         await fetch('http://localhost:5001/issue/delete/'+`${user.username}`,{body:JSON.stringify({id:x}),method:"POST",headers: { 'Content-Type': 'application/json' }});
         if(li.childElementCount==1){
           li.remove();
+          console.log(li.childElementCount);
         }else{
           book_details.remove();
         }
@@ -62,28 +57,32 @@ async function createBookEntry(user) {
 
       buttonsDiv.appendChild(rejectButton);
       rejectButton.addEventListener('click',async ()=>{
-        await fetch('http://localhost:5001/issue/delete/'+`${user.username}`,{body:JSON.stringify({id:book.id}),method:"POST",headers: { 'Content-Type': 'application/json' }});
+        await fetch('http://localhost:5001/issue/delete/'+`${user.username}`,{body:JSON.stringify({id:x}),method:"POST",headers: { 'Content-Type': 'application/json' }});
         if(li.childElementCount==1){
           li.remove();
+          
         }else{
           book_details.remove();
         }
+      
+      
       });
 
 
       book_details.appendChild(nullDiv)
       book_details.appendChild(buttonsDiv);
       li.appendChild(book_details);
+      issuedBooksList.appendChild(li);
     });
   }
-  return li;
+  
 }
 
 fetch('http://localhost:5001/issue').then((res)=>{return res.json()}).then( (userList)=>{
   if (userList) {
     userList.forEach(async (user) => {
-        const bookEntry =await createBookEntry(user);
-        issuedBooksList.appendChild(bookEntry);
+         createBookEntry(user);
+        
     });
   }
 

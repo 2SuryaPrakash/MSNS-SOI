@@ -38,7 +38,7 @@ router.post('/signup', async (req, res) => {
           req.body.password=await bcrypt.hash(req.body.password,10);
           await Cart.create({username:req.body.username,bookid:[]});
           await Issue.create({username:req.body.username,bookid:[]});
-          await Return.create({username:req.body.username,bookid:[]});
+          await Return.create({username:req.body.username,borrowed:[]});
           await BorrowerRecord.create({username:req.body.username,borrowed:[]});
           await User.create(req.body).then((user) => {
           console.log(user.username + " saved to user collection.");
