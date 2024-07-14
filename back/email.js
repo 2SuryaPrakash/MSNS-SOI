@@ -55,4 +55,4 @@ async function checkDueBooks() {
 }
 //Running the checkDueBooks function periodically every hour
 setInterval(checkDueBooks, 3600000);
-    
+module.exports = {checkDueBooks,sendEmailNoti};
