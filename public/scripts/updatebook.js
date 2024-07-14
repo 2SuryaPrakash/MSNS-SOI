@@ -58,19 +58,23 @@ const openUpdateBookPopUpOverlay=(book,bookid)=>{
             
             console.log('pass');
 
-            location.reload();  
+             
 
             
             //add notification add after reload
             let snackbar=document.querySelector('.update-book-snackbar');
             const titleData=document.querySelector('.update-book-snackbar span');
-            titleData.textContent=title;
+            titleData.textContent=title.value;
             snackbar.classList.add('showSnackbar');
 
 
             setTimeout(()=>{
                 snackbar.className=snackbar.className.replace('showSnackbar','');
-            },3000)
+            },3000);
+
+            setTimeout(()=>{
+                location.reload(); 
+            },3200);
 
 
 

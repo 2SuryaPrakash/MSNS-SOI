@@ -78,6 +78,7 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+
 }
 
 .book-item .user {
@@ -100,6 +101,8 @@
   box-shadow: 2px 2px 1px 3px rgba(0, 0, 0, 0.5);
 
   border-radius: 1em;
+
+  margin: 0.3em 0 0.3em 0;
 }
 
 .issue-buttons{
@@ -147,6 +150,8 @@
   border-radius: 1em;
 
 
+
+
 }
 
 .book-item .book {
@@ -155,8 +160,11 @@
   padding: 0.5em;
 }
 
-.book-item .date{
+.book-item .count{
   margin-left: 20px;
 
   padding: 0.5em;
+
 }
+
+

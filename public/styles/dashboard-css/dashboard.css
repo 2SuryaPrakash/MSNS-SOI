@@ -24,6 +24,44 @@
     }
 }*/
 
+@keyframes slideleft {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes rise-up {
+    from{
+       
+
+        scale: 1.05;
+
+        transform: none;
+    }
+    to{
+        transform: none;
+    }
+
+}
+
 .dashboard{
     position: relative;
 
@@ -55,6 +93,9 @@
 
     background-color: black;
     color: rgb(182, 169, 169);
+
+    animation: slideleft 2s ease 0s 1 normal forwards;
+
 
 }
 
@@ -122,6 +163,9 @@
 
     margin: 0px 0px 25px 0px;
 
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+
 }
 
 .user-details-description-title{
@@ -146,6 +190,9 @@
     border-radius: 2em;
 
     margin:0.5em 0 1.5em 0;
+
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
 
 }
 
@@ -179,6 +226,8 @@
 
     padding: 10px 0 10px 20px;
     margin: 0 0 10px 0;
+
+
 }
 
 .dashboard-books-history-issued-bookCard div{
@@ -251,6 +300,9 @@
 
     border-radius: 2em;
 
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+
 
 }
 
@@ -300,6 +352,9 @@
 
     border-radius: 2em;
 
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+
 }
 
 .dashboard-pending-return-requests-title{
@@ -334,6 +389,8 @@
 
     justify-content: space-between;
     font-size: 0.8em;
+
+
 }
 
 

@@ -6,7 +6,7 @@ async function createBookEntry(user) {
 
   const userDiv = document.createElement('div');
   userDiv.className = 'user';
-  userDiv.textContent = `User: ${user.username}`;
+  userDiv.textContent = `Username: ${user.username}`;
   li.appendChild(userDiv);
 
   for(let x of user.bookid){  
