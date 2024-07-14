@@ -4,19 +4,6 @@ var {User,BorrowerRecord} = require('./schemas')
 
 const mongoURI = 'mongodb+srv://admin:Nihar365@-management-sys.05ochgu.mongodb.net/?retryWrites=true&w=majority&appName=Lib-management-sys';
 
-//new user schema
-const userSchema = new mongoose.Schema({
-  name: String,
-  username: { type: String, unique: true },
-  password: String,
-  email: { type: String, unique: true },
-  issuedBooks: [{
-    title: String,
-    issuedDate: Date
-  }]
-});
-
-const User = mongoose.model('User', userSchema);
 
 // Function to send email notification
 async function sendEmailNoti(userEmail, bookTitle) {
@@ -53,15 +40,15 @@ async function checkDueBooks() {
   const today = new Date();
 
   // Find users with issued books
-  const users = await User.find({ issuedBooks: { $exists: true } });
+  const users = await BorrowRecord.find({borrowed: {$exists:true}});
 
   for (const user of users) {
-    for (const book of user.issuedBooks) {
-      const issueDate = new Date(book.issuedDate);
-      const daysSinceIssue = Math.floor((today - issueDate) / (1000 * 60 * 60 * 24));
+    for (const book of BorrowerRecord.borrowed.bookid) {
+      const dueDate = new Date(BorrowerRecord.borrowed.duedate);
+      // const daysSinceIssue = Math.floor((today - issueDate) / (1000 * 60 * 60 * 24));
 
-      if (daysSinceIssue === 20) {
-        await sendEmailNoti(user.email, book.title);
+      if (today === dueDate) {
+        await sendEmailNoti(user.email, BorrowerRecord.title);
       }
     }
   }
