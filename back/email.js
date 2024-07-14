@@ -6,7 +6,7 @@ const mongoURI = 'mongodb+srv://admin:Nihar365@-management-sys.05ochgu.mongodb.n
 
 
 // Function to send email notification
-async function sendEmailNoti(userEmail, bookTitle) {
+async function sendEmailNoti(userEmail, bookid) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -18,8 +18,8 @@ async function sendEmailNoti(userEmail, bookTitle) {
   const mailOptions = {
     from: 'librarian@gmail.com',
     to: userEmail,
-    subject: `Book Due Today - ${bookTitle}`,
-    text: `This is a reminder that the book ${bookTitle} is due today. Please return it to the library by EOD.`
+    subject: `Book Due Today - ${bookid}`,
+    text: `This is a reminder that the book ${bookid} is due today. Please return it to the library by EOD.`
   };
 
   try {
