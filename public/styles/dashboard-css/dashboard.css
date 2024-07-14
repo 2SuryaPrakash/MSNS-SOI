@@ -409,3 +409,66 @@
 .dashboard-pending-return-requests-bookCard-cancelButton{
     flex:1;
 }
+
+
+
+/*SNACKBAR THAT APPEARS UPON RETURNING A BOOK*/
+
+#return-book-snackbar{
+    visibility: hidden;
+    position: fixed;
+
+    top:100px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(224, 224, 224);
+    color: rgb(18, 18, 18);
+
+    border-radius: 1em;
+
+    font-family: 'Arima';
+    font-weight: 500;
+    font-size: 1.3vw;
+
+    padding: 10px;
+
+    z-index: 39;
+}
+
+@keyframes fade-in{
+    from{
+        top:0;
+        right:0;
+        opacity: 0;
+    }
+
+    to{
+        top:100px;
+        right:10px;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out{
+    from{
+        top:100px;
+        right:10px;
+        opacity: 1;
+    }
+
+    to{
+        top:0px;
+        right:0px;
+        opacity: 0;
+    }
+}
+
+#return-book-snackbar.showSnackbar{
+    visibility:visible;
+
+    animation: fade-in 1s,fade-out 1.5s 4.0s;
+}

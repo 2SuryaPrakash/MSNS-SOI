@@ -52,6 +52,14 @@ async function createBookEntry(user) {
         }else{
           book_details.remove();
         }
+
+        let snackbar=document.getElementById('issueRequest-book-snackbar');
+            
+        snackbar.className='showSnackbar';
+
+        setTimeout(()=>{
+            snackbar.className=snackbar.className.replace('showSnackbar','');
+        },1800);
       });
 
 
@@ -64,6 +72,14 @@ async function createBookEntry(user) {
         }else{
           book_details.remove();
         }
+
+        let snackbar=document.getElementById('rejectRequest-book-snackbar');
+            
+        snackbar.className='showSnackbar';
+
+        setTimeout(()=>{
+            snackbar.className=snackbar.className.replace('showSnackbar','');
+        },1800);
       
       
       });

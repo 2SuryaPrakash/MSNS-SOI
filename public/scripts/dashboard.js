@@ -84,9 +84,27 @@ function createBookCardBorrowed(book,username) {
         returnButton.addEventListener('click',async ()=>{
                 await fetch('http://localhost:5001/return/'+username,{body:JSON.stringify({books:[{borrowed:{bookid:book.bookid,duedate:book.duedate}}]}),method:"POST",headers: { 'Content-Type': 'application/json' }});
                 await fetch('http://localhost:5001/borrow/delete/'+username,{body:JSON.stringify({id:book.bookid}),method:"POST",headers: { 'Content-Type': 'application/json' }});
+
+                //remove book from the list.
+
                 await bookCard.remove(); 
                 parentContainer3.textContent='';
                 await fetchPendingReturn(); 
+
+
+                //Code for snackbar that pops up whenever return button is clicked.
+                let snackbarBookTitle=document.querySelector('#return-book-snackbar span');
+                snackbarBookTitle.textContent=bookName.textContent;
+                let snackbar=document.getElementById('return-book-snackbar');
+            
+                snackbar.className='showSnackbar';
+
+
+                setTimeout(()=>{
+                    snackbar.className=snackbar.className.replace('showSnackbar','');
+                },4500);
+
+                
             });
 
         returnButton.appendChild(returnButtonElement);

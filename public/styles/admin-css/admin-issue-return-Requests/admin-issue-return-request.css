@@ -168,3 +168,66 @@
 }
 
 
+
+
+/*SNACKBAR THAT APPEARS UPON APPROVING/REJECTING A ISSUE REQUEST*/
+
+#issueRequest-book-snackbar,#returnRequest-book-snackbar,#rejectRequest-book-snackbar{
+  visibility: hidden;
+  position: fixed;
+
+  top:100px;
+  right: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgb(224, 224, 224);
+  color: rgb(18, 18, 18);
+
+  border-radius: 1em;
+
+  font-family: 'Arima';
+  font-weight: 500;
+  font-size: 1.3vw;
+
+  padding: 10px;
+
+  z-index: 39;
+}
+
+@keyframes fade-in{
+  from{
+      top:0;
+      right:0;
+      opacity: 0;
+  }
+
+  to{
+      top:100px;
+      right:10px;
+      opacity: 1;
+  }
+}
+
+@keyframes fade-out{
+  from{
+      top:100px;
+      right:10px;
+      opacity: 1;
+  }
+
+  to{
+      top:0px;
+      right:0px;
+      opacity: 0;
+  }
+}
+
+#issueRequest-book-snackbar.showSnackbar,#returnRequest-book-snackbar.showSnackbar,#rejectRequest-book-snackbar.showSnackbar{
+  visibility:visible;
+
+  animation: fade-in 0.8s,fade-out 0.8s 1.5s;
+}
+

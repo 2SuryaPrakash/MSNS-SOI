@@ -120,21 +120,13 @@
         rgb(238,233,219) 66%,
 
         rgb(47,89,130) 67%,
-        rgb(47,89,130) 100%
-
-       
-
-
-    
-
-       
-
-
-
-
-        
+        rgb(47,89,130) 100%        
 
     );
+
+    background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+
+    color: white;
 
    
     border-radius: 5px 15px 15px 5px;
@@ -300,5 +292,285 @@
 
     background-color: rgb(80, 79, 79);
 }
+
+
+
+
+/*BOOK CARDS*/
+
+.search-bookDisplay-card{
+    background-color: rgba(18, 18, 18, 0.725);
+    background-color: transparent;
+
+   
+
+    height: 12em;
+    width: 12em;
+
+    border-radius: 15px;
+    padding: 10px 5px 5px 5px;
+    margin: 10px 18px 45px 18px;
+
+    position: relative;
+
+    perspective: 1000px;
+
+    
+}
+
+
+.search-bookDisplay-card-front{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+
+    padding: 10px 10px 5px 10px;
+
+}
+.search-bookDisplay-card-image-div{
+    flex:6;
+
+    border-radius: 15px;
+
+    width: 100%;
+
+    padding: 2px;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bookDisplay-card-image{
+  
+  width: 60%;
+  border-radius: 10px;
+  height: inherit;
+}
+
+.search-bookDisplay-card-title{
+    flex:2;
+
+    font-weight: bold;
+    font-size: 12px;
+
+    text-align: center;
+
+    padding: 3px 0 3px 0;
+}
+
+.search-bookDisplay-card-author{
+    flex:1;
+
+    font-size:10px;
+    text-align: center;
+    padding: 3px 0 2px 0;
+}
+
+
+.search-bookDisplay-card-back{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+
+    padding: 10px 10px 5px 10px;
+
+    font-size: 12px;
+
+    position: absolute;
+
+   
+}
+
+.search-bookDisplay-card-inner{
+
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition:  0.8s;
+    transform-style: preserve-3d;
+
+    margin: 10px;
+}
+
+
+.search-bookDisplay-card:hover .search-bookDisplay-card-inner{
+    transform: rotateY(180deg);
+}
+
+.search-bookDisplay-card-front,.search-bookDisplay-card-back{
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+
+
+}
+
+.search-bookDisplay-card-front{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-color: #171717;
+    padding: 20px 15px;
+
+}
+
+.search-bookDisplay-card-back{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+    background-color: #171717;
+
+    transform: rotateY(180deg);
+
+    padding: 20px 15px 20px 15px;
+
+    justify-content: space-evenly;
+    text-align: left;
+}
+
+
+
+.search-bookDisplay-card-front:hover .search-bookDisplay-card-back{
+    transform: rotateY(180deg);
+    opacity: 1;
+
+}
+
+
+.search-bookDisplay-card-back-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    overflow-y: auto;
+    overflow-x: hidden;    
+
+    padding-right: 5px;
+
+    width: 100%;
+
+    background-color: transparent;
+
+    visibility: visible;
+    transition: 0.5s;
+
+   
+}
+
+.search-bookDisplay-card-back-content-display{
+    visibility: visible;
+}
+
+.search-bookDisplay-card-back-content::-webkit-scrollbar{
+    width: 3px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.441);    
+  
+}
+
+
+
+
+.search-bookDisplay-card-back-content div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background-color: transparent;
+}
+
+.search-bookDisplay-card-back-content p{
+    margin: 0;
+    padding: 10px 10px 10px 3px;
+
+    text-wrap: wrap;
+    width: 100%;
+    
+    background-color: transparent;
+}
+
+.search-bookDisplay-card-back-descriptionButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 0 5px 0;
+}
+.search-bookDisplay-card-back-issue{
+
+    /*comment out below 3 lines if description is required as a seperate button*/
+    
+    /*position: absolute;
+    bottom:-22px;
+    left:0;*/
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    background-color: transparent;
+
+    transition: 0.8s;
+}
+
+.search-bookDisplay-card-back-issue-button,.search-bookDisplay-card-back-descriptionButton-button{
+    padding: 10px 15px;
+
+    background-color: rgb(74, 74, 74);
+    color: white;
+
+    border: none;
+    border-radius: 1em; 
+
+}
+
+.search-bookDisplay-card-back-issue-button:hover,.search-bookDisplay-card-back-descriptionButton-button:hover{
+    background-color: rgb(81, 81, 81);
+}
+
+.search-bookDisplay-card-back-issue-button:active,.search-bookDisplay-card-back-descriptionButton-button:active{
+    background-color: rgb(100, 99, 99);
+}
+
+
+.search-bookDisplay-card-back-bookNotAvailable{
+    position: absolute;
+   
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding:1rem;
+    
+    text-align: center;
+
+    height: 80%;
+
+    background-color: #171717;
+    color: rgb(228, 228, 228);
+
+    font-size: 1.3em;
+    font-weight: bold;
+
+
+    visibility: hidden;
+
+
+}
+
+
+
 
 

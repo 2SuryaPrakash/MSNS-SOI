@@ -51,6 +51,14 @@ async function createBookEntry(user) {
         }else{
           book_details.remove();
         }
+
+        let snackbar=document.getElementById('returnRequest-book-snackbar');
+              
+        snackbar.className='showSnackbar';
+    
+        setTimeout(()=>{
+            snackbar.className=snackbar.className.replace('showSnackbar','');
+        },2000);
       });
 
 
