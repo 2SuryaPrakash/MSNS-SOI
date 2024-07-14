@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Ailerons';
-    src: url('../font-styles/Ailerons-Typeface.otf');
+    src: url('../../../fonts/Ailerons-Typeface.otf');
   }
 
 .admin-student-data{
@@ -36,8 +36,67 @@
 
     width: 100%;
 }
+
+.admin-student-data-search-student-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+
+    background-color: rgba(140, 140, 140, 0.123);
+
+    padding: 1em;
+
+    width: 80%;
+    color: white;
+
+    border-radius: 1em;
+}
+
+.admin-student-data-search-student-form button{
+    background-color: rgba(0, 0, 0, 0.521);
+    border: none;
+    outline: none;
+
+    color: white;
+
+    font-family: ruda;
+
+    padding: 1em 1.5em;
+    margin: 10px 10px 10px 10px;
+    border-radius: 0.5rem;   
+}
+
+
+.admin-student-data-search-student-form select{
+    background-color: rgba(0, 0, 0, 0.521);
+    border: none;
+    outline: none;
+
+    color: white;
+
+    padding: 10px 13px 10px 13px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 0.5rem;
+
+    font-family: ruda;
+}
+.admin-student-data-search-student-form option{
+    background-color: rgba(0, 0, 0, 0.521);
+    border: none;
+    outline: none;
+
+    color: white;
+
+    padding: 10px 13px 10px 13px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 0.5rem;
+}
+
 .admin-student-data-search-student-input{
     padding: 1em 1em 1em 2em;
+    margin: 0 1em 0 1em;
 
     border-radius: 1em;
     border:none;
@@ -75,10 +134,12 @@
 
 .admin-student-data-student-details-card{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
 
-    width: 13em;
-    height: 15em;
+    /*width: 13em;
+    height: 15em;*/
+    width: 100%;
 
     border-radius: 1em;
 
@@ -96,7 +157,19 @@
 
 }
 .admin-student-data-student-details-card:hover{
-    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.385);
+    box-shadow: 1px 1px 10px 1px rgba(255, 255, 255, 0.155);
+
+}
+
+.admin-student-data-student-details-card-user-details{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+
+
+    padding: 1em 1em;
+    margin: 0 1em 0 0;
+
 
 }
 
@@ -131,9 +204,13 @@
 }
 
 .admin-student-data-student-details-card-bookList{
+    flex:5;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 85%;
 
     background-color: rgba(56, 56, 56, 0.516);
 
@@ -153,7 +230,7 @@
 .admin-student-data-student-details-card-bookList-list{
     display: flex;
     flex-direction: column;
-    padding: 0.2em 0.3em;
+    padding: 0.3em 0.3em;
     border-radius: 0.5em;
 
 
@@ -182,9 +259,8 @@
 
 
 
-.admin-student-data-student-details-card-bookList-list p{
-    margin: 0;
-    padding: 0.5em;
+.admin-student-data-student-details-card-bookList-list div{
+    padding: 0.6em;
 
     width: 90%;
 

@@ -122,7 +122,7 @@
 
             </div>  
             <div class="post-login-landing-page-active">
-                <div class="welcome-user">Wecome back {{welcomeUser}}!</div>
+                <div class="welcome-user">Welcome back {{welcomeUser}}!</div>
             </div>  
         </div>
 
@@ -178,21 +178,9 @@
             </div>
 
             <div class="explore-page-navigation">
-                <button class="explore-page-navigation-IssueBook">Issue a new Book</button>
+                <button class="explore-page-navigation-IssueBook" onclick="movetosearchwindow()">Issue a new Book</button>
             </div>
         </div>
-
-        <div class="spacer" style="height: 150px; margin-bottom: 0px;     background-color: rgb(16, 16, 16);"></div>
-
-        
-
-        
-
-
-      
-
-        <div class="spacer-contact-about"></div>
-
 
         <div class="contact-page" >
             <div class="contact-page-identifier" id="contact">
@@ -278,5 +266,16 @@
     
             </div>
         </div>
+
+
+    <script>
+        const movetosearchwindow=()=>{
+            window.location.href="http://localhost:5001/search"
+        }
+    </script>
+
+
+
+
     </body>
 </html>

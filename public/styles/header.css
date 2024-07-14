@@ -62,6 +62,14 @@
 
 }
 
+.logo{
+    width: 4em;    
+}
+
+.logo-image{
+    width: 80%;
+}
+
 
 .mid-header{
     flex:4;

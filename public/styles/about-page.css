@@ -15,6 +15,12 @@
     100%{background-position:0% 54%}
 }
 
+
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../fonts/Ailerons-Typeface.otf');
+}
+
 .about{
     display: flex;
     flex-direction: column;
@@ -55,10 +61,12 @@
 
     padding: 10px 25px 10px 20px;
 
-    font-size: 45px;
+    font-size: 55px;
+    font-weight: normal;
 
     border-radius: 12px;
-    border: 2px rgba(193, 147, 33, 0.698) solid;
+
+    font-family: Ailerons;
 }
 
 
@@ -109,8 +117,8 @@
 
     padding: 20px 20px ;
 
-    box-shadow: 5px 5px 45px 3px rgb(223, 221, 221);
     box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
+    box-shadow: 5px 5px 45px 1px rgba(223, 221, 221, 0.33);
 
 
     backdrop-filter: blur(20px);
@@ -119,10 +127,35 @@
 }
 
 .about-project-description-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: rgba(36, 35, 35, 0.698);
     box-shadow: -5px -5px 45px 3px rgba(224, 198, 6, 0.518);
-    
+    box-shadow: 5px 5px 45px 1px rgba(223, 221, 221, 0.33);
+   
 }
+
+.about-project-description-right{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+
+
+
+.about-project-description-right p{
+    margin:  0.8em 0;
+    text-align: center;
+}
+
+.about-project-description-right a{
+    text-decoration: underline;    
+}
+
+
 
 .about-project-description-centre{
    
@@ -142,7 +175,12 @@
     }
     .about-project-description-centre{
         width: 600px;
+        margin: 1em 0 1em 0;
     }
+    .about-project-description-left,.about-project-description-right{
+        margin: 0.5em 0 1em 0;
+    }
+
     
     
    
@@ -237,6 +275,8 @@
 
     background: rgba(209, 208, 208, 0.888);
     background-color: rgba(182, 139, 29, 0.689);
+    background: rgba(31, 31, 31, 0.888);
+
 
     color: rgb(0, 0, 0);
     color: white;
@@ -360,6 +400,17 @@
     
     text-wrap: nowrap;
 }
+
+
+.about-project-description-left-logo{
+    border-radius: 20px;
+    width: 60%;
+}
+
+
+
+
+
 
 
 

@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../../font-styles/Ailerons-Typeface.otf');
+}
 
 .landing-pageBG{
     position: relative;
@@ -142,7 +145,7 @@
     flex-wrap: nowrap;
 
 
-    font-family: 'quintessential','Tangerine',Ailerons,arial,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Ailerons,'quintessential','Tangerine',Ailerons,arial,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
     
     /*padding: 50px 50px 50px 18vw;   
@@ -166,7 +169,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    font-family: 'quintessential','Tangerine',Ailerons,arial,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Ailerons,'quintessential','Tangerine',Ailerons,arial,Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
    
     /*padding: 50px 20vw 50px 10px;   
     margin: -30px 5px 0px 50px;*/

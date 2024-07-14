@@ -57,8 +57,23 @@ const openUpdateBookPopUpOverlay=(book,bookid)=>{
         }else{
             
             console.log('pass');
+
             location.reload();  
+
+            
             //add notification add after reload
+            let snackbar=document.querySelector('.update-book-snackbar');
+            const titleData=document.querySelector('.update-book-snackbar span');
+            titleData.textContent=title;
+            snackbar.classList.add('showSnackbar');
+
+
+            setTimeout(()=>{
+                snackbar.className=snackbar.className.replace('showSnackbar','');
+            },3000)
+
+
+
             //enable admin addboks
             console.log(newbook); 
         }

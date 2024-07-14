@@ -16,6 +16,10 @@ a{
     filter: invert(1) hue-rotate(180);
 }
 
+html{
+    scroll-behavior: smooth; 
+}
+
 
 
 /*

@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../fonts/Ailerons-Typeface.otf');
+}
 *{
     margin: 0;
     padding: 0;

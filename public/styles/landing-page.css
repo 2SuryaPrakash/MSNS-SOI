@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../fonts/Ailerons-Typeface.otf');
+}
 
 .landing-pageBG{
     display: flex;

@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../../fonts/Ailerons-Typeface.otf');
+}
+
+
+
+/*SEARCH WINDOW ALLOWS USER TO SEARCH FOR A BOOK AND THEN EITHER ISSUE BOOK OR ADD IT TO A CART*/
+
 .search{
     display: flex;
     flex-direction: column;
@@ -71,6 +80,9 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+
+
+/*SEARCH-DISPLAY-CARD DESCRIBES THE CSS INVOLVED WITH EVERY BOOK TREATED AS A CARD HERE*/
 
 .search-bookDisplay-card{
     background-color: rgba(18, 18, 18, 0.725);
@@ -322,6 +334,9 @@
 
 
 /*SEARCH FILTERS*/
+
+
+
 .search-filters{
     background-color: rgba(140, 140, 140, 0.123);
     color: white;
@@ -363,9 +378,6 @@
     padding: 10px 13px 10px 13px;
     margin: 10px 10px 10px 10px;
     border-radius: 0.5rem;
-
-
-  
 }
 
 
@@ -379,8 +391,12 @@
 
 
 .search-filters-form-options-input{
-    padding: 11px 12px;
+    padding: 0.8em 0.8em;
     margin: 0 0 0 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
 
     background-color: rgba(0, 0, 0, 0.521);
     color: white;
@@ -440,7 +456,10 @@
 }
 
 
-#addToCart-book-snackbar{
+
+/*SNACKBAR INVOLVED WHEN ADD TO CART IS CLICKED*/
+
+#addToCart-book-snackbar,#issue-book-snackbar{
     visibility: hidden;
     position: fixed;
 
@@ -493,11 +512,19 @@
     }
 }
 
-#addToCart-book-snackbar.showSnackbar{
+#addToCart-book-snackbar.showSnackbar,#issue-book-snackbar.showissueSnackbar{
     visibility:visible;
 
     animation: fade-in 1s,fade-out 1s 2.0s;
 }
+
+
+
+
+/*CONTENT TO BE DISPLAYED BEHIND A BOOK CARD WHENEVER A BOOK IS OUT OF STOCK*/
+
+
+
 .search-bookDisplay-card-back-bookNotAvailable{
     position: absolute;
 
@@ -519,9 +546,6 @@
 
     font-size: 1.3em;
     font-weight: bold;
-
-
-    
 
 
 }

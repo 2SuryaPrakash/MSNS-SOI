@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Ailerons';
-    src: url('../font-styles/Ailerons-Typeface.otf');
+    src: url('../../fonts/Ailerons-Typeface.otf');
 }
 
 
@@ -172,7 +172,6 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
 
     border-radius: 10px;
     
@@ -183,8 +182,22 @@
 }
 
 .dashboard-books-history-issued-bookCard div{
-    margin: 0.4em 0em 0.3em 0em;
+    margin: 0.4em 0.2em 0.3em 0.2em;
+}
 
+.dashboard-books-history-issued-bookCard-bookName{
+    flex:2;
+    
+}
+.dashboard-books-history-issued-bookCard-returnDate{
+    flex:2;
+}
+.dashboard-books-history-issued-bookCard-lateFee{
+    flex: 1;
+}
+
+.dashboard-books-history-issued-bookCard-returnButton{
+    flex:1;
 }
 
 @media (max-width:750px) {
@@ -326,4 +339,16 @@
 
 .dashboard-pending-return-requests-bookList-bookCard div{
     margin: 0.4em 0.5em 0.3em 0.5em;
+}
+
+.dashboard-pending-return-requests-bookCard-bookName{
+    flex:2;
+    
+}
+.dashboard-books-history-issued-bookCard-lateFee{
+    flex:1;
+}
+
+.dashboard-pending-return-requests-bookCard-cancelButton{
+    flex:1;
 }

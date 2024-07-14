@@ -217,13 +217,10 @@
 
 
 
-
 .logo{
-    width: 5.5vw;
-    
+    width: 4em;    
 }
 
 .logo-image{
-    width: 100%;
-    height: 100%;
+    width: 80%;
 }

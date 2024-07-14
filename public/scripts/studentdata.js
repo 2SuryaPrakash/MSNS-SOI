@@ -16,6 +16,9 @@ submitButton.addEventListener('click',()=>{
             if(student.username!='admin'){
                     const studentCard = document.createElement('div');
                     studentCard.classList.add('admin-student-data-student-details-card');
+
+                    const studentUserDetails=document.createElement('div');
+                    studentUserDetails.classList.add('admin-student-data-student-details-card-user-details');
                 
                     const studentName = document.createElement('div');
                     studentName.classList.add('admin-student-data-student-details-card-name');
@@ -54,8 +57,12 @@ submitButton.addEventListener('click',()=>{
                     studentBookList.appendChild(bookListTitle);
                     studentBookList.appendChild(bookList);
                 
-                    studentCard.appendChild(studentName);
-                    studentCard.appendChild(studentUsername);
+
+                    studentUserDetails.appendChild(studentName);
+                    studentUserDetails.appendChild(studentUsername);
+
+                    studentCard.appendChild(studentUserDetails);
+
                     studentCard.appendChild(studentBookList);
                 
                     studentDetailsContainer.appendChild(studentCard);

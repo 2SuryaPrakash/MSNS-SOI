@@ -20,6 +20,11 @@
     }
 }
 
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../../fonts/Ailerons-Typeface.otf');
+}
+
 
 
 .explore-page-identifier{
@@ -42,9 +47,9 @@
 }
 
 .explore-page-title{
-    font-family: 'caveat';
+    font-family: Ailerons,'caveat';
     font-size: 55px;
-    font-weight: bold;
+    font-weight: normal;
 
     margin: 10px 0px 30px 0px;
 

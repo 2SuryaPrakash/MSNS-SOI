@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Ailerons';
-    src: url('../font-styles/Ailerons-Typeface.otf');
+    src: url('../../../fonts/Ailerons-Typeface.otf');
 }
 
 .update-book{
@@ -315,7 +315,7 @@
 
 
 
-#delete-book-snackbar{
+#delete-book-snackbar,#update-book-snackbar{
     visibility: hidden;
     position: fixed;
 
@@ -368,8 +368,25 @@
     }
 }
 
-#delete-book-snackbar.showSnackbar{
+#delete-book-snackbar.showSnackbar,#update-book-snackbar.showSnackbar{
     visibility:visible;
 
     animation: fade-in 1s,fade-out 1s 2.0s;
+}
+
+.search-filters-form-options-input{
+    padding: 0.8em 0.8em;
+    margin: 0 0 0 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    background-color: rgba(0, 0, 0, 0.521);
+    color: white;
+
+    border: none;
+    border-radius: 0.5rem;
+
+    
 }

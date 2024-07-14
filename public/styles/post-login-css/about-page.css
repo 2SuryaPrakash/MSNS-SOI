@@ -15,6 +15,11 @@
     100%{background-position:0% 54%}
 }
 
+@font-face {
+    font-family: 'Ailerons';
+    src: url('../../fonts/Ailerons-Typeface.otf');
+}
+
 .about{
     display: flex;
     flex-direction: column;
@@ -31,7 +36,7 @@
     padding: 0px 0px 0px 0px;
 
 
-    font-family: "Caveat","Quintessential",Ailerons;
+    font-family: Ruda,"Caveat","Quintessential",Ailerons;
     font-weight: bold;
 
     /*background: linear-gradient(58deg,black, #2c2c2c,  #000000,rgb(34, 34, 34));
@@ -56,6 +61,7 @@
     padding: 10px 25px 10px 20px;
 
     font-size: 55px;
+
 
     /*border-radius: 12px;
     border: 2px rgba(193, 147, 33, 0.698) solid;*/
