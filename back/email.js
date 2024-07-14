@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
+var {User,BorrowerRecord} = require('./schemas')
 
 const mongoURI = 'mongodb+srv://admin:Nihar365@-management-sys.05ochgu.mongodb.net/?retryWrites=true&w=majority&appName=Lib-management-sys';
 
