@@ -48,7 +48,7 @@ async function checkDueBooks() {
       // const daysSinceIssue = Math.floor((today - issueDate) / (1000 * 60 * 60 * 24));
 
       if (today === dueDate) {
-        await sendEmailNoti(user.email, BorrowerRecord.title);
+        await sendEmailNoti(user.email, BorrowerRecord.borrowed.bookid);
       }
     }
   }
