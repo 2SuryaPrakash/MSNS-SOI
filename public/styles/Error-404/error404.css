@@ -1,0 +1,47 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.image-error{
+    background-color: transparent;
+}
+
+img{
+    width: 600px;
+}
+
+
+
+
+div{
+    position: fixed;
+    bottom: 2em;
+}
+
+button{
+
+    color: rgb(10, 10, 10);
+
+    padding: 2em 3em;
+
+    border-radius: 2em;
+
+    font-family: Ruda;
+    font-weight: bold;
+    font-size: 15px;
+
+    border: none;
+
+    background-color: rgb(226, 226, 226);
+}
+
+button:hover{
+    background-color: rgb(202, 202, 202);
+}
+
+button:active{
+    background-color: rgb(206, 206, 206);
+}
