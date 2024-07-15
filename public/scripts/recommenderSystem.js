@@ -12,7 +12,7 @@ async function displayBooks(start, end,username) {
     document.querySelectorAll('.explore-page-book').forEach(x=>{
         x.remove();
     }); 
-    const response = await fetch('http://localhost:5001/recommender/'+username); 
+    const response = await fetch('http://localhost:5001/recommender/'+username);
     const data = await response.json();
     if(data.length==0){
         explorePageDisplay.innerHTML='Borrow books to get personalized recommendations';

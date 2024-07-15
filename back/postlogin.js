@@ -14,7 +14,7 @@ router.get('/search',authenticateUser,async (req,res)=>{
     res.render('layouts/search',{cellsData:data,currentusername:req.user.username});
 });
 router.get('/home',authenticateUser,(req,res)=>{
-    res.render('layouts/post-login',{welcomeUser:req.user.name});
+    res.render('layouts/post-login',{welcomeUser:req.user.name,username:req.user.username});
 });
 router.post('/search',authenticateUser,async (req,res)=>{
     let query={};
