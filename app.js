@@ -64,6 +64,10 @@ app.use('/', issueRouter);
 app.use('/', returnRouter);
 app.use('/',recommenderRouter);
 
+app.get('*',(req,res)=>{
+  res.render('layouts/error404');
+})
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Internal Server Error');
