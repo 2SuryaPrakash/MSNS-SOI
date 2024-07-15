@@ -11,10 +11,10 @@ async function sendEmailNoti(userEmail, bookid,latefee) {
   let transporter = nodemailer.createTransport({
     host: 'smtp.office365.com',
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false, 
     auth: {
-      user: 'msnslibrary@outlook.com', // your Outlook email address
-      pass: 'qaz123wsx456', // your Outlook app password or email password
+      user: 'msnslibrary@outlook.com', 
+      pass: 'qaz123wsx456', 
     },
   });
   let textMessage=(latefee===0)?`This is a reminder that the book ${data.title} is due today. Please return it to the library by EOD.`:`This is a reminder that the book ${data.title} is overdue.Your late fees is: ${latefee}. Please submit the book as well as the latefee at the earliest to prevent further charges`;
@@ -64,6 +64,5 @@ async function checkDueBooks() {
     }
   }
 }
-//Running the checkDueBooks function periodically every hour
-// setInterval(checkDueBooks, 3600000);
+
 module.exports = {checkDueBooks,sendEmailNoti};
