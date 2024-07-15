@@ -1,6 +1,6 @@
 <h1>The Rogues</h1>
 <h2>Managing Shelves, Navigating stories</h2>
-<h3>This is a library management website , created by : <br>1. Meda Varshith<br>2. Surya Prakash S<br>3.Nihar Sagar G<br>4.Saipushkar Nagaraj</h3>
+<h5>This is a library management website , created by : <br>1. Meda Varshith<br>2. Surya Prakash S<br>3.Nihar Sagar G<br>4.Saipushkar Nagaraj</h5>
 <br>
 <p>Instructions to run the website</p>
 1.Fork and clone(or just clone) this repo on your computer.
