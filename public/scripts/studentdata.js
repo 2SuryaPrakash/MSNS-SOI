@@ -70,3 +70,7 @@ submitButton.addEventListener('click',()=>{
           });
     });
 })
+
+submitButton.click();
+
+

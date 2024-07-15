@@ -16,8 +16,8 @@
 
         <!--JS FILES-->
         <script src="scripts/login.js" defer> </script>
-        <script src="scripts/Displaymodes.js" defer ></script>
-        <script src="scripts/cartitemsrender.js" defer ></script>
+        <script src="scripts/recommenderSystem.js" defer ></script>
+
 
         <!--ADDITIONAL IMPORTED FONT FILES-->
 
@@ -51,7 +51,7 @@
             <div class="left-header" >
                 <nav class="nav-left-header">
                     <div class="logo">
-                        <a class="nav-links" href="./post-login.html">
+                        <a class="nav-links" href="http://localhost:5001/welcome">
                             <div class="logo">
                                 <img src="styles/Logo & Images/M.S.N.S.png" alt="" class="logo-image">
                             </div>
@@ -124,6 +124,7 @@
             </div>  
             <div class="post-login-landing-page-active">
                 <div class="welcome-user">Welcome back {{welcomeUser}}!</div>
+                <div hidden class="welcome-user-username">{{username}}</div>
             </div>  
         </div>
 
@@ -136,7 +137,11 @@
             <div class="explore-page-title">
                 Explore
             </div>
+
+
+
             <div class="explore-page-display">
+                
 
                 <a href="" class="explore-page-book">
                     <div class="explore-page-book-contents">
@@ -177,6 +182,12 @@
                         </div>
                     </div>
                 </a>
+
+
+
+                <div class="explore-page-display-showMore-button">
+                    <button>Explore More &#8594;</button>
+                </div>
             </div>
 
             <div class="explore-page-navigation">

@@ -19,9 +19,10 @@ var borrowRouter = require('./back/borrow');
 var issueRouter = require('./back/issuerequest');
 var returnRouter = require('./back/returnrequest');
 var adminRouter = require('./back/admin');
+var recommenderRouter=require('./back/recommender');
 
 // Importing email functions
-const { checkDueBooks, sendEmailNoti } = require('./email');
+const { checkDueBooks, sendEmailNoti } = require('./back/email');
 
 const hbs = require('hbs');
 app.set('views', path.join(__dirname, 'views'));
@@ -61,6 +62,7 @@ app.use('/', borrowRouter);
 app.use('/', adminRouter);
 app.use('/', issueRouter);
 app.use('/', returnRouter);
+app.use('/',recommenderRouter);
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

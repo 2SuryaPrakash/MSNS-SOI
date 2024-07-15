@@ -470,5 +470,5 @@
 #return-book-snackbar.showSnackbar{
     visibility:visible;
 
-    animation: fade-in 1s,fade-out 1.5s 4.0s;
+    animation: fade-in 1s,fade-out 1s 1.5s;
 }

@@ -66,6 +66,7 @@
     border-radius: 65px;
 
     margin:30px 0 0 0;
+    padding: 1em 0.5em;
 
     background: transparent;
 
@@ -85,6 +86,8 @@
 
     
 }
+
+
 
 .explore-page-book{
     color: black;
@@ -213,11 +216,13 @@
     justify-content: center;
     align-items: center;
 
+    padding: 0.5em;
+
     border-top-right-radius: 20px;
     border-top-left-radius: 15px;
 
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1em;
 
 
     width: 100%;
@@ -236,7 +241,10 @@
 .book-author{
     flex:1;
 
-    font-size: 14px;
+    font-size: 0.6em;
+    font-weight: normal;
+
+    padding:0.5em;
 
     display: flex;
     justify-content: center;
@@ -292,6 +300,44 @@
 
     background-color: rgb(80, 79, 79);
 }
+
+
+
+/*SHOW MORE BUTTON*/
+
+.explore-page-display-showMore-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore-page-display-showMore-button button{
+    border: none;
+    padding: 1em 1.2em;
+
+    background-color: rgb(50, 50, 50);
+    color: white;
+
+    font-size: 14px;
+    font-weight: normal;
+
+    font-family: ruda;
+
+    border-radius: 1em;
+}
+
+.explore-page-display-showMore-button button:hover{
+    background-color: rgb(71, 71, 71);
+}
+
+.explore-page-display-showMore-button button:active{
+    background-color: rgb(44, 44, 44);
+
+}
+
+
+
+
 
 
 
@@ -569,6 +615,12 @@
 
 
 }
+
+
+
+
+
+
 
 
 

@@ -102,7 +102,7 @@ function createBookCardBorrowed(book,username) {
 
                 setTimeout(()=>{
                     snackbar.className=snackbar.className.replace('showSnackbar','');
-                },4500);
+                },1800);
 
                 
             });
@@ -177,4 +177,17 @@ function fetchPendingReturn(){
     });
 }
 fetchPendingReturn();
+
+setInterval(()=>{
+    location.reload();
+},60000);
+  
+  
+  
+  
+  
+  
+  
+  
+  
 

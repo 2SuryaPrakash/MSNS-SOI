@@ -58,23 +58,49 @@ const openUpdateBookPopUpOverlay=(book,bookid)=>{
             
             console.log('pass');
 
-             
-
-            
-            //add notification add after reload
             let snackbar=document.querySelector('.update-book-snackbar');
             const titleData=document.querySelector('.update-book-snackbar span');
             titleData.textContent=title.value;
             snackbar.classList.add('showSnackbar');
 
 
+            
+            //add notification add after reload
+           
+
+            /*location.reload().then(()=>{
+                setTimeout(()=>{
+                    let snackbar=document.querySelector('.update-book-snackbar');
+                    const titleData=document.querySelector('.update-book-snackbar span');
+                    titleData.textContent=title.value;
+                    snackbar.classList.add('showSnackbar');
+                },1000);
+    
+                
+    
+    
+                setTimeout(()=>{
+                    //window.location.href='http://localhost:5001/admin/search/#search-bookDisplay'
+                },200);
+    
+                setTimeout(()=>{
+                    snackbar.className=snackbar.className.replace('showSnackbar','');
+                },4000);
+
+            }); */
+
+
+            setTimeout(() => {
+                location.reload();
+            }, 3100);
+
             setTimeout(()=>{
                 snackbar.className=snackbar.className.replace('showSnackbar','');
             },3000);
 
-            setTimeout(()=>{
-                location.reload(); 
-            },3200);
+            
+
+           
 
 
 

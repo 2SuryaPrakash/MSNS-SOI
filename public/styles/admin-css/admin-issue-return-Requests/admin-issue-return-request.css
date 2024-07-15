@@ -146,7 +146,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 0.3em;
+  padding: 0.6em 0.3em;
   border-radius: 1em;
 
 
@@ -160,12 +160,14 @@
   padding: 0.5em;
 }
 
-.book-item .count{
+.book-item .count,.dashboard-books-history-issued-bookCard-lateFee{
   margin-left: 20px;
 
   padding: 0.5em;
 
 }
+
+
 
 
 

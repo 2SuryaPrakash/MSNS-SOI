@@ -28,6 +28,20 @@ async function createBookEntry(user) {
       nullDiv.appendChild(bookDiv);
       nullDiv.appendChild(countDiv);
 
+      const lateFeeContainer = document.createElement('div');
+      lateFeeContainer.classList.add('dashboard-books-history-issued-bookCard-lateFee');
+      lateFeeContainer.textContent = 'Late Fee - ₹ ';
+      const lateFeeAmount = document.createElement('span');
+      lateFeeAmount.classList.add('dashboard-books-history-issued-bookCard-lateFee-amount');
+      lateFeeAmount.textContent = Math.max(0, Math.floor(((new Date()).getTime() - Date.parse(x.duedate)) / (1000 * 60 * 60 * 24))) *100; //100 rupee per day
+
+      lateFeeContainer.appendChild(lateFeeAmount);
+
+      nullDiv.appendChild(lateFeeContainer);
+
+
+
+
       const buttonsDiv=document.createElement('div');
       buttonsDiv.className='issue-buttons';
 
@@ -46,7 +60,7 @@ async function createBookEntry(user) {
       buttonsDiv.appendChild(issueButton);
       issueButton.addEventListener('click',async ()=>{
         await fetch('http://localhost:5001/return/delete/'+`${user.username}`,{body:JSON.stringify({id:x.bookid}),method:"POST",headers: { 'Content-Type': 'application/json' }});
-        if(li.childElementCount==1){
+        if(li.querySelectorAll('.book-content').length === 1){
           li.remove();
         }else{
           book_details.remove();
@@ -80,6 +94,11 @@ fetch('http://localhost:5001/return').then((res)=>{return res.json()}).then( (us
   }
 
 });
+
+setInterval(()=>{
+  location.reload();
+},60000
+);
 
 
 

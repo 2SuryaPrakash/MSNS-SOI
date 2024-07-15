@@ -18,7 +18,7 @@ router.get('/home',authenticateUser,(req,res)=>{
 });
 router.post('/search',authenticateUser,async (req,res)=>{
     let query={};
-    let sort=null;
+    let sort=null; 
     let sortby='';
     
         // const escapedInput = req.body.query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -51,23 +51,28 @@ router.post('/search',authenticateUser,async (req,res)=>{
 router.post('/search/user',async (req,res)=>{
     if(req.body.type=='name'){
         if(req.body.query){
-            let data=await User.find({name:{$regex: req.body.query,$options:'i'}});
+            let data=await User.find({name:{$regex: req.body.query,$options:'i'}}).sort({name:1});
             res.send(data);
         }else{
-            let data=await User.find({});
+            let data=await User.find({}).sort({name:1});
             res.send(data);
         }
         
     }else if(req.body.type=='username'){
         if(req.body.query){
-            let data=await User.find({username:{$regex: req.body.query,$options:'i'}});
+            let data=await User.find({username:{$regex: req.body.query,$options:'i'}}).sort({username:1});
             res.send(data);
         }else{
-            let data=await User.find({});
+            let data=await User.find({}).sort({username:1});
             res.send(data);
         }  
     }
     
+    
+})
+router.get('/searchbyid/:id',authenticateUser,async(req,res)=>{
+    let data =await Book.findById(req.params.id);
+    res.render('layouts/search',{cellsData:data,currentusername:req.user.username});
     
 })
 router.get('/dashboard',authenticateUser,(req,res)=>{

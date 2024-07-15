@@ -46,11 +46,15 @@ async function createBookEntry(user) {
       issueButton.addEventListener('click',async ()=>{
         await fetch('http://localhost:5001/borrow/'+`${user.username}`,{body:JSON.stringify({books:[x]}),method:"POST",headers: { 'Content-Type': 'application/json' }});
         await fetch('http://localhost:5001/issue/delete/'+`${user.username}`,{body:JSON.stringify({id:x}),method:"POST",headers: { 'Content-Type': 'application/json' }});
-        if(li.childElementCount==1){
-          li.remove();
+
+
+        if(li.querySelectorAll('.book-content').length === 1){
           console.log(li.childElementCount);
+
+          li.remove();
         }else{
           book_details.remove();
+
         }
 
         let snackbar=document.getElementById('issueRequest-book-snackbar');
@@ -66,7 +70,7 @@ async function createBookEntry(user) {
       buttonsDiv.appendChild(rejectButton);
       rejectButton.addEventListener('click',async ()=>{
         await fetch('http://localhost:5001/issue/delete/'+`${user.username}`,{body:JSON.stringify({id:x}),method:"POST",headers: { 'Content-Type': 'application/json' }});
-        if(li.childElementCount==1){
+        if(li.querySelectorAll('.book-content').length === 1){
           li.remove();
           
         }else{
@@ -103,3 +107,12 @@ fetch('http://localhost:5001/issue').then((res)=>{return res.json()}).then( (use
   }
 
 });
+
+setInterval(()=>{
+  location.reload();
+},60000
+);
+
+
+
+

@@ -67,7 +67,7 @@ router.post('/login',async (req, res) => {
         if(req.body.username=='admin'){
           res.render('layouts/admin',{welcomeUser:'Admin'});  
         }else{
-          res.render('layouts/post-login',{welcomeUser:user.name});
+          res.render('layouts/post-login',{welcomeUser:user.name,username:user.username});
         }
       }
     }
