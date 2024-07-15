@@ -39,16 +39,18 @@ mongoose.connect(mongoURI)
 async function checkDueBooks() {
   const today = new Date();
 
-  // Find users with issued books
-  const users = await BorrowRecord.find({borrowed: {$exists:true}});
+  // Find borrowers with issued books
+  const borrowers = await BorrowerRecord.find({ borrowed: { $exists: true, $ne: [] } });
 
-  for (const user of users) {
-    for (const book of BorrowerRecord.borrowed.bookid) {
-      const dueDate = new Date(BorrowerRecord.borrowed.duedate);
-      // const daysSinceIssue = Math.floor((today - issueDate) / (1000 * 60 * 60 * 24));
-
+  for (const borrower of borrowers) {
+    for (const borrowedBook of borrower.borrowed) {
+      const dueDate = new Date(borrowedBook.duedate);
       if (today === dueDate) {
-        await sendEmailNoti(user.email, BorrowerRecord.borrowed.bookid);
+        // Find user's email
+        const user = await User.findOne({ username: borrower.username });
+        if (user && user.email) {
+          await sendEmailNoti(user.email, borrowedBook.bookid);
+        }
       }
     }
   }
