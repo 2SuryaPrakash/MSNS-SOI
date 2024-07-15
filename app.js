@@ -70,7 +70,10 @@ app.use((err, req, res, next) => {
 });
 
 // Schedule the checkDueBooks function to run periodically
-setInterval(checkDueBooks, 3600000); // Runs every hour
+setInterval(checkDueBooks, 3600000*24); // Runs every day
+
+
+// sendEmailNoti('cs23bt072@iitdh.ac.in','udhebfijdbfj');
 
 // server listening
 app.listen(port, () => {

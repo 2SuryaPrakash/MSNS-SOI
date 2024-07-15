@@ -1,25 +1,29 @@
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
-var {User,BorrowerRecord} = require('./schemas')
+var {User,BorrowerRecord,Book} = require('./schemas')
 
-const mongoURI = 'mongodb+srv://admin:Nihar365@-management-sys.05ochgu.mongodb.net/?retryWrites=true&w=majority&appName=Lib-management-sys';
+
 
 
 // Function to send email notification
-async function sendEmailNoti(userEmail, bookid) {
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
+async function sendEmailNoti(userEmail, bookid,latefee) {
+  let data=await Book.findById(bookid);
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false, // true for 465, false for other ports
     auth: {
-      user: 'librarian@gmail.com',
-      pass: 'qwerty@1234'
-    }
+      user: 'msnslibrary@outlook.com', // your Outlook email address
+      pass: 'qaz123wsx456', // your Outlook app password or email password
+    },
   });
-
+  let textMessage=(latefee===0)?`This is a reminder that the book ${data.title} is due today. Please return it to the library by EOD.`:`This is a reminder that the book ${data.title} is overdue.Your late fees is: ${latefee}. Please submit the book as well as the latefee at the earliest to prevent further charges`;
+  let subjectMessage=(latefee===0)?`Book Due Today- ${data.title}`:`Book Overdue - ${data.title}`
   const mailOptions = {
-    from: 'librarian@gmail.com',
+    from: 'msnslibrary@outlook.com',
     to: userEmail,
-    subject: `Book Due Today - ${bookid}`,
-    text: `This is a reminder that the book ${bookid} is due today. Please return it to the library by EOD.`
+    subject: subjectMessage,
+    text: textMessage
   };
 
   try {
@@ -31,25 +35,30 @@ async function sendEmailNoti(userEmail, bookid) {
 }
 
 // Connecting to MongoDB
-mongoose.connect(mongoURI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Error connecting to MongoDB:', err));
 
-// Function to check for overdue books
+
+// Function to check for overdue books 
 async function checkDueBooks() {
   const today = new Date();
 
   // Find borrowers with issued books
   const borrowers = await BorrowerRecord.find({ borrowed: { $exists: true, $ne: [] } });
+  // console.log(borrowers);
+  for (let borrower of borrowers) {
+     
 
-  for (const borrower of borrowers) {
-    for (const borrowedBook of borrower.borrowed) {
-      const dueDate = new Date(borrowedBook.duedate);
-      if (today === dueDate) {
+    for (let borrowedBook of borrower.borrowed) {
+      // const dueDate = new Date(borrowedBook.duedate);
+      console.log(borrowedBook.duedate);
+      const dueDate=Date.parse(borrowedBook.duedate)
+      // console.log(borrowedBook.dueDate,today);
+      if (today.getTime() >= dueDate) {
         // Find user's email
         const user = await User.findOne({ username: borrower.username });
         if (user && user.email) {
-          await sendEmailNoti(user.email, borrowedBook.bookid);
+          let latefee=Math.max(0, Math.floor(((new Date()).getTime() - Date.parse(borrowedBook.duedate)) / (1000 * 60 * 60 * 24))) *100;
+          await sendEmailNoti(user.email, borrowedBook.bookid,latefee);
+          console.log(user.email)
         }
       }
     }
