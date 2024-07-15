@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
             if(user.username=='admin'){
                 res.render('layouts/admin',{welcomeUser:user.name})
             }else{
-                res.render('layouts/post-login',{welcomeUser:user.name})
+                res.render('layouts/post-login',{welcomeUser:user.name,username:usern})
             }
             
           });
