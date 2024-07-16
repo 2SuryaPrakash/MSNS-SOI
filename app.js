@@ -8,7 +8,7 @@ var session = require('express-session');
 const bodyParser = require('body-parser');
 const schemas = require('./back/schemas');
 var db = schemas.db;
-const port = 3000;
+const port = 5001;
 
 // Importing routers
 var authRouter = require('./back/auth');
