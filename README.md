@@ -11,3 +11,5 @@
 <br>
 4.Run node app.js (Or run npx nodemon app.js if you have it installed)
 <br>
+<p>To access admin operations, use the following credentials  username:admin password:admin</p>
+<p>To signup email must be of the form *********@iidh.ac.in</p>
